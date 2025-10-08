@@ -57,20 +57,20 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link 
-              to="/our-work" 
-              className={`nav-link ${location.pathname === '/our-work' ? 'active' : ''}`}
+              to="/what-we-do" 
+              className={`nav-link ${location.pathname === '/what-we-do' ? 'active' : ''}`}
               onClick={closeMenu}
             >
-              Our Work
+              What We Do
             </Link>
           </li>
           <li className="nav-item">
             <Link 
-              to="/partner" 
-              className={`nav-link ${location.pathname === '/partner' ? 'active' : ''}`}
+              to="/case-studies" 
+              className={`nav-link ${location.pathname === '/case-studies' ? 'active' : ''}`}
               onClick={closeMenu}
             >
-              Partner With Us
+              Case Studies
             </Link>
           </li>
           <li className="nav-item">

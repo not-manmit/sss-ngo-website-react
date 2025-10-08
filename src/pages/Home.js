@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import sssLogo from '../assets/images/SSS_LOGO-removebg-preview.png';
 import './Home.css';
 
 const Home = () => {
@@ -77,7 +78,7 @@ const Home = () => {
           <div className="section-grid">
             <div className="section-image slide-up">
               <div className="image-placeholder">
-                <span className="image-icon">🤝</span>
+                <img src={sssLogo} alt="SSS Logo" className="image-icon" />
               </div>
             </div>
             <div className="section-content slide-up">

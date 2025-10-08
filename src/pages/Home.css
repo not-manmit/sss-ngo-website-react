@@ -139,7 +139,7 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #667eea;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
@@ -159,6 +159,7 @@
 .about-preview,
 .featured-work {
   padding: 5rem 2rem;
+ 
 }
 
 .section-grid {
@@ -170,13 +171,17 @@
 
 .image-placeholder {
   width: 100%;
-  aspect-ratio: 4/3;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
+}
+
+.image-icon {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  object-fit: contain;
+  border-radius: 15px;
 }
 
 .section-title {
