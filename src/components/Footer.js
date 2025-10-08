@@ -1,0 +1,59 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-section">
+          <h3 className="footer-logo">Selfless <span>Serving Society</span></h3>
+          <p className="footer-description">
+            Making a difference in communities through compassion, dedication, and impactful initiatives.
+          </p>
+          <div className="social-links">
+            <a href="#" aria-label="Facebook"><i className="social-icon">f</i></a>
+            <a href="#" aria-label="Twitter"><i className="social-icon">t</i></a>
+            <a href="#" aria-label="Instagram"><i className="social-icon">i</i></a>
+            <a href="#" aria-label="LinkedIn"><i className="social-icon">in</i></a>
+          </div>
+        </div>
+
+        <div className="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/our-work">Our Work</Link></li>
+            <li><Link to="/partner">Partner With Us</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><Link to="/contact">Volunteer</Link></li>
+            <li><Link to="/partner">Donate</Link></li>
+            <li><Link to="/partner">Corporate Partnership</Link></li>
+            <li><Link to="/our-work">Our Projects</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Contact Info</h4>
+          <ul className="contact-info">
+            <li>📧 info@selflessserving.org</li>
+            <li>📞 +1 (555) 123-4567</li>
+            <li>📍 123 Hope Street, City</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>&copy; 2025 Selfless Serving Society. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
