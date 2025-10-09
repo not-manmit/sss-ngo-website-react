@@ -39,9 +39,7 @@ const About = () => {
             <div className="content-text slide-up">
               <h2 className="section-heading">Our Story</h2>
               <p>
-                Founded with a vision to create meaningful change, our organization has grown from 
-                a small group of passionate individuals into a dynamic force for good. We believe 
-                that every person deserves access to opportunities that enable them to thrive.
+                We are a non-governmental, non-profit organisation dedicated to closing this gap. Through outreach programs, workshops, seminars, talks, and distribution of health-related products, we strive to empower people with knowledge, tools, and habits that help them live healthier, more dignified lives.
               </p>
               <p>
                 Over the years, we have expanded our reach and deepened our impact, working 

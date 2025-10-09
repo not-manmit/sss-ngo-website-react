@@ -31,15 +31,15 @@ const Home = () => {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1 className="hero-title fade-in">
-            Empowering Communities,<br />
+            Helping People,<br /> 
             <span className="highlight">Changing Lives</span>
           </h1>
           <p className="hero-subtitle fade-in">
             Join us in making a lasting impact through compassion, dedication, and meaningful action.
           </p>
           <div className="hero-buttons fade-in">
-            <Link to="/partner" className="btn btn-primary">Get Involved</Link>
-            <Link to="/our-work" className="btn btn-secondary">Learn More</Link>
+            <Link to="/Contact" className="btn btn-primary">Get Involved</Link>
+            <Link to="/What-We-Do" className="btn btn-secondary">Learn More</Link>
           </div>
         </div>
         <div className="scroll-indicator">
@@ -84,16 +84,15 @@ const Home = () => {
             <div className="section-content slide-up">
               <h2 className="section-title">Who We Are</h2>
               <p className="section-text">
-                We are a passionate team dedicated to creating positive change in underserved communities. 
-                Through innovative programs and collaborative partnerships, we address critical social issues 
-                and empower individuals to build better futures.
+                Selfless Serving Society was founded out of a conviction that basic health and hygiene awareness is one of the most powerful tools for uplifting communities. In many underserved areas, a lack of knowledge about simple hygienic practices, limited access to essential health supplies, and infrequent outreach mean that preventable illnesses continue to take heavy tolls — especially among women, children, and the elderly.
               </p>
               <p className="section-text">
-                Our commitment to transparency, sustainability, and measurable impact drives everything we do.
+                We are a non-governmental, non-profit organisation dedicated to closing this gap. Through outreach programs, workshops, seminars, talks, and distribution of health-related products, we strive to empower people with knowledge, tools, and habits that help them live healthier, more dignified lives.
               </p>
-              <Link to="/about" className="btn btn-link">
+              <Link to="/About" className="btn btn-link">
                 Learn About Us →
               </Link>
+            
             </div>
           </div>
         </div>
@@ -131,7 +130,7 @@ const Home = () => {
           </div>
 
           <div className="centered">
-            <Link to="/our-work" className="btn btn-primary">View All Projects</Link>
+            <Link to="/case-studies" className="btn btn-primary">View All Projects</Link>
           </div>
         </div>
       </section>
