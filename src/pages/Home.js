@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import sssLogo from '../assets/images/SSS_LOGO-removebg-preview.png';
+import sssLogo from '../assets/images/SSS_LOGO_main-removebg-preview.png';
 import './Home.css';
 
 const Home = () => {
@@ -35,7 +35,7 @@ const Home = () => {
             <span className="highlight">Changing Lives</span>
           </h1>
           <p className="hero-subtitle fade-in">
-            Join us in making a lasting impact through compassion, dedication, and meaningful action.
+            Empowering Communities Through Health, Hygiene, Education, and Compassionate Change for a Dignified Future
           </p>
           <div className="hero-buttons fade-in">
             <Link to="/Contact" className="btn btn-primary">Get Involved</Link>

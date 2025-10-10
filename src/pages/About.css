@@ -22,6 +22,20 @@
   background-size: cover;
 }
 
+/* Our Approach Section */
+.approach-section {
+  background: #f8f9fa;
+}
+
+.approach-image {
+  background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+}
+
+.content-text p strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
 .page-hero-content {
   position: relative;
   z-index: 1;

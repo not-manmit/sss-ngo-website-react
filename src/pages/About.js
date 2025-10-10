@@ -48,14 +48,38 @@ const About = () => {
                 solutions.
               </p>
               <p>
-                Today, we continue to be driven by the same core values that inspired our 
-                founding: compassion, integrity, collaboration, and a commitment to lasting change.
+                Selfless Serving Society empowers communities by spreading health and hygiene awareness. Through workshops and outreach programs, it provides essential care and education to underserved areas, inspiring healthier and more dignified lives for all.
               </p>
             </div>
             <div className="content-image slide-up">
               <div className="image-box">
                 <span className="image-icon">📖</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="section approach-section">
+        <div className="container">
+          <div className="content-grid">
+            <div className="content-image slide-up">
+              <div className="image-box approach-image">
+                <span className="image-icon">🎯</span>
+              </div>
+            </div>
+            <div className="content-text slide-up">
+              <h2 className="section-heading">Our Approach</h2>
+              <p>
+                At Selfless Serving Society, our approach focuses on empowering women and girls through education, awareness, and community support. We conduct workshops and sessions for adolescent girls on menstrual health, puberty, body changes, self-care, hygiene, and breaking taboos. By creating safe spaces in schools and communities, we encourage open conversations, provide guidance, and ensure access to sanitary supplies without shame.
+              </p>
+              <p>
+                We also distribute hygiene kits with biodegradable sanitary pads, soap, and other essentials to those who cannot afford them. Alongside this, we promote community engagement by involving parents, teachers, boys, and local leaders to build a supportive and stigma-free environment.
+              </p>
+              <p>
+                Finally, we monitor our impact not just by counting kits or events, but by observing real outcomes — improved knowledge, confidence, school attendance, and reduced hygiene-related illnesses. Through this approach, we strive to create lasting change and promote dignity and health for all.
+              </p>
             </div>
           </div>
         </div>
