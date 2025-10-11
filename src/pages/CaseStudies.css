@@ -4,10 +4,10 @@
 
 /* Hero Section */
 .page-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
   padding: 120px 20px 80px;
   text-align: center;
-  color: white;
+  color: #2c3e50;
   position: relative;
   overflow: hidden;
 }
@@ -123,7 +123,7 @@
 
 .case-study-icon {
   font-size: 4rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -163,7 +163,7 @@
 .case-study-section h4 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #667eea;
+  color: #d68910;
   margin-bottom: 10px;
 }
 
@@ -305,19 +305,20 @@
 .cta-button {
   display: inline-block;
   padding: 16px 40px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f4d03f 0%, #f1c40f 100%);
+  color: #2c3e50;
+  font-weight: 700;
   text-decoration: none;
   border-radius: 50px;
-  font-weight: 600;
   font-size: 1.1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(244, 208, 63, 0.4);
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  box-shadow: 0 6px 20px rgba(244, 208, 63, 0.6);
+  background: linear-gradient(135deg, #f1c40f 0%, #d68910 100%);
 }
 
 /* Animation Classes */
