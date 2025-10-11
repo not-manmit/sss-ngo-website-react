@@ -311,15 +311,15 @@
 }
 
 .btn-primary-inverse {
-  background: white;
-  color: #d68910;
+  background: #ff0000;
+  color: #000000;
   border: 2px solid white;
 }
 
 .btn-primary-inverse:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(139, 128, 2, 0.3);
-  background: #34256d;
+  background: rgb(246, 242, 26);
 }
 
 .btn-outline {
