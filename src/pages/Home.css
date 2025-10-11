@@ -318,8 +318,8 @@
 
 .btn-primary-inverse:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-  background: #fef9e7;
+  box-shadow: 0 10px 25px rgba(139, 128, 2, 0.3);
+  background: #34256d;
 }
 
 .btn-outline {
