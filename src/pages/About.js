@@ -128,9 +128,9 @@ const About = () => {
           </p>
           <div className="values-grid">
             <div className="value-card slide-up">
-              <div className="value-icon">💙</div>
-              <h3>Compassion</h3>
-              <p>We approach every situation with empathy and understanding, putting people first.</p>
+              <div className="value-icon">🌸</div>
+              <h3>Empower</h3>
+              <p>We believe that no women, adolescent girl should miss work or school, feel ashamed, or be deprived of her dignity because of menstruation or hygiene barriers.</p>
             </div>
             <div className="value-card slide-up">
               <div className="value-icon">🤝</div>

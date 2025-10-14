@@ -147,7 +147,7 @@
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .value-card {
@@ -178,6 +178,8 @@
 .value-card p {
   color: #7f8c8d;
   line-height: 1.6;
+  text-align: center;
+  font-weight: 2px;
 }
 
 /* Team Section */
