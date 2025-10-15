@@ -4,8 +4,8 @@
 }
 
 .page-hero {
-  background: linear-gradient(135deg, #F8E16C 0%, #F28482 100%);
-  color: #333333;
+  background: linear-gradient(135deg, #FFE066 0%, #FFD23F 50%, #E8B10D 100%);
+  color: #2C2C2C;
   padding: 6rem 2rem;
   text-align: center;
   position: relative;
@@ -25,15 +25,15 @@
 
 /* Our Approach Section */
 .approach-section {
-  background: #FFFAF2;
+  background: #FFFBEA;
 }
 
 .approach-image {
-  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
+  background: linear-gradient(135deg, #FFD23F 0%, #E8B10D 100%);
 }
 
 .content-text p strong {
-  color: #F28482;
+  color: #E8B10D;
   font-weight: 600;
 }
 
@@ -80,7 +80,7 @@
 
 .section-heading {
   font-size: 2.5rem;
-  color: #333333;
+  color: #2C2C2C;
   margin-bottom: 2rem;
   font-weight: 700;
 }
@@ -91,7 +91,7 @@
 }
 
 .section-subheading {
-  color: #7f8c8d;
+  color: #666;
   font-size: 1.1rem;
   margin-bottom: 3rem;
 }
@@ -99,7 +99,7 @@
 .image-box {
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
+  background: linear-gradient(135deg, #FFD23F 0%, #E8B10D 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -109,7 +109,7 @@
 
 /* Vision & Mission */
 .vision-mission-section {
-  background: linear-gradient(135deg, #FFFAF2 0%, #fef5e7 100%);
+  background: linear-gradient(135deg, #FFFBEA 0%, #fff8d6 100%);
 }
 
 .vm-grid {
@@ -238,7 +238,7 @@
 
 /* Impact Statement */
 .impact-statement {
-  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
+  background: linear-gradient(135deg, #E8B10D 0%, #c9960a 100%);
   color: white;
   padding: 5rem 2rem;
   text-align: center;

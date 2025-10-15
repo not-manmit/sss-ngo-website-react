@@ -1,7 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './CaseStudies.css';
 
+// Import photos for case study 1
+const caseStudy1Photos = [
+  require('../assets/Case Study 1/cs1 1.jpg'),
+  require('../assets/Case Study 1/cs1 2.jpg'),
+  require('../assets/Case Study 1/cs1 3.jpg'),
+  require('../assets/Case Study 1/cs1 4.jpg'),
+  require('../assets/Case Study 1/cs1 5.jpg'),
+  require('../assets/Case Study 1/cs1 6.jpg'),
+  // require('../assets/Case Study 1/cs1 7.jpg'),
+  require('../assets/Case Study 1/cs1 8.jpg'),
+  require('../assets/Case Study 1/cs1 9.jpg'),
+  require('../assets/Case Study 1/cs1 10.jpg'),
+  require('../assets/Case Study 1/cs1 11.jpg'),
+  require('../assets/Case Study 1/cs1 12.jpg'),
+];
+
 const CaseStudies = () => {
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -20,6 +38,19 @@ const CaseStudies = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Navigation handlers
+  const nextPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) => 
+      (prevIndex + 1) % caseStudy1Photos.length
+    );
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) => 
+      prevIndex === 0 ? caseStudy1Photos.length - 1 : prevIndex - 1
+    );
+  };
+
   const caseStudies = [
     {
       id: 1,
@@ -27,18 +58,15 @@ const CaseStudies = () => {
       location: "Runwal Elegante, Mumbai",
       year: "2024",
       image: "💫",
+      photos: caseStudy1Photos,
       challenge: "Limited livelihood opportunities for tribal women and individuals with physical challenges",
       solution: "Participated in an All-Women Entrepreneurs Exhibition, showcasing handcrafted Diwali diyas, decorative items, jute bags, incense sticks, masalas, and eco-friendly baskets — all made by marginalized artisans",
       impact: [
         "120 corporate diya orders received",
-        "100% sales proceeds directed towards adolescent girls’ health & hygiene programs",
+        "100% sales proceeds directed towards adolescent girls' health & hygiene programs",
         "50+ women artisans gained sustainable income",
         "Strengthened self-reliance & community pride"
-      ],
-      testimonial: {
-        quote: "My daughter can now read and write. This has changed our family's future forever.",
-        author: "Rajesh Kumar, Parent"
-      }
+      ]
     },
     {
       id: 2,
@@ -53,11 +81,7 @@ const CaseStudies = () => {
         "75% employment rate",
         "50+ self-help groups formed",
         "₹2.5 Cr income generated"
-      ],
-      testimonial: {
-        quote: "I now run my own tailoring business and support my family. I am finally independent.",
-        author: "Meera Devi, Graduate"
-      }
+      ]
     },
     {
       id: 3,
@@ -72,11 +96,7 @@ const CaseStudies = () => {
         "15 health workers trained",
         "90% vaccination coverage",
         "50% reduction in preventable diseases"
-      ],
-      testimonial: {
-        quote: "The mobile clinic saved my son's life. We are forever grateful to this organization.",
-        author: "Soma Munda, Mother"
-      }
+      ]
     }
   ];
 
@@ -121,6 +141,39 @@ const CaseStudies = () => {
                 </div>
               </div>
 
+              {/* Photo Slider - Only for first case study */}
+              {study.photos && study.photos.length > 0 && (
+                <div className="photo-slider">
+                  <div className="slider-container">
+                    {study.photos.map((photo, photoIndex) => (
+                      <img
+                        key={photoIndex}
+                        src={photo}
+                        alt={`${study.title} - Photo ${photoIndex + 1}`}
+                        className={`slider-image ${photoIndex === currentPhotoIndex ? 'active' : ''}`}
+                      />
+                    ))}
+                    
+                    {/* Navigation Arrows */}
+                    <button className="slider-arrow slider-arrow-left" onClick={prevPhoto}>
+                      ‹
+                    </button>
+                    <button className="slider-arrow slider-arrow-right" onClick={nextPhoto}>
+                      ›
+                    </button>
+                  </div>
+                  <div className="slider-indicators">
+                    {study.photos.map((_, photoIndex) => (
+                      <span
+                        key={photoIndex}
+                        className={`indicator ${photoIndex === currentPhotoIndex ? 'active' : ''}`}
+                        onClick={() => setCurrentPhotoIndex(photoIndex)}
+                      ></span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="case-study-content">
                 <div className="case-study-section">
                   <h4>The Challenge</h4>
@@ -142,12 +195,6 @@ const CaseStudies = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="case-study-testimonial">
-                  <div className="quote-icon">"</div>
-                  <p className="testimonial-quote">{study.testimonial.quote}</p>
-                  <p className="testimonial-author">- {study.testimonial.author}</p>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
+  background: linear-gradient(135deg, #E8B10D 0%, #c9960a 100%);
   color: white;
   padding: 4rem 2rem 1rem;
   margin-top: 4rem;
@@ -27,7 +27,7 @@
 }
 
 .footer-logo span {
-  color: #F8E16C;
+  color: #FFFBEA;
 }
 
 .footer-description {
@@ -55,8 +55,8 @@
 }
 
 .social-links a:hover {
-  background: #F28482;
-  color: white;
+  background: #FFD23F;
+  color: #2C2C2C;
   transform: translateY(-3px);
 }
 
@@ -83,7 +83,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: #F8E16C;
+  color: #FFFBEA;
   transform: translateX(5px);
 }
 

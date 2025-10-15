@@ -3,8 +3,8 @@
 }
 
 .page-hero {
-  background: linear-gradient(135deg, #F8E16C 0%, #F28482 100%);
-  color: #333333;
+  background: linear-gradient(135deg, #FFE066 0%, #FFD23F 50%, #E8B10D 100%);
+  color: #2C2C2C;
   padding: 6rem 2rem;
   text-align: center;
   position: relative;
@@ -154,8 +154,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #84A59D;
-  box-shadow: 0 0 0 3px rgba(132, 165, 157, 0.2);
+  border-color: #FFD23F;
+  box-shadow: 0 0 0 3px rgba(255, 210, 63, 0.2);
 }
 
 .form-group textarea {
@@ -321,16 +321,15 @@
 }
 
 .btn-primary {
-  background: #F8E16C;
-  color: #333333;
+  background: #FFD23F;
+  color: #2C2C2C;
   font-weight: 700;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(248, 225, 108, 0.4);
-  background: #F28482;
-  color: white;
+  box-shadow: 0 10px 25px rgba(255, 210, 63, 0.4);
+  background: linear-gradient(135deg, #FFE066, #E8B10D);
 }
 
 .btn-large {
