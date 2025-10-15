@@ -3,8 +3,8 @@
 }
 
 .page-hero {
-  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, #F8E16C 0%, #F28482 100%);
+  color: #333333;
   padding: 6rem 2rem;
   text-align: center;
   position: relative;
@@ -133,7 +133,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: #333333;
   font-weight: 600;
   font-size: 0.95rem;
 }
@@ -154,8 +154,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #f4d03f;
-  box-shadow: 0 0 0 3px rgba(244, 208, 63, 0.2);
+  border-color: #84A59D;
+  box-shadow: 0 0 0 3px rgba(132, 165, 157, 0.2);
 }
 
 .form-group textarea {
@@ -205,7 +205,7 @@
 
 /* Form Image */
 .image-box {
-  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
   border-radius: 20px;
   padding: 3rem;
   height: 100%;
@@ -249,7 +249,7 @@
 .map-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #fef9e7 0%, #f9e79f 100%);
+  background: linear-gradient(135deg, #FFFAF2 0%, #fef5e7 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -321,15 +321,16 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #f4d03f, #f1c40f);
-  color: #2c3e50;
+  background: #F8E16C;
+  color: #333333;
   font-weight: 700;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(244, 208, 63, 0.4);
-  background: linear-gradient(135deg, #f1c40f, #d68910);
+  box-shadow: 0 10px 25px rgba(248, 225, 108, 0.4);
+  background: #F28482;
+  color: white;
 }
 
 .btn-large {

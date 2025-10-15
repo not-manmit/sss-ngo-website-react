@@ -4,10 +4,10 @@
 
 /* Hero Section */
 .page-hero {
-  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #F8E16C 0%, #F28482 100%);
   padding: 120px 20px 80px ;
   text-align: center;
-  color: #2c3e50;
+  color: #333333;
   position: relative;
   overflow: hidden;
 }
@@ -106,7 +106,7 @@
 
 /* Programs Section */
 .programs-section {
-  background: #fef9e7;
+  background: #FFFAF2;
 }
 
 .programs-grid {
@@ -268,8 +268,8 @@
 
 /* Stats Section */
 .stats-section {
-  background: linear-gradient(135deg, #f4d03f 0%, #f1c40f 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
+  color: white;
 }
 
 .stats-grid {
@@ -398,29 +398,31 @@
 }
 
 .cta-button.primary {
-  background: linear-gradient(135deg, #f4d03f 0%, #f1c40f 100%);
-  color: #2c3e50;
+  background: #F8E16C;
+  color: #333333;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(244, 208, 63, 0.4);
+  box-shadow: 0 4px 15px rgba(248, 225, 108, 0.4);
 }
 
 .cta-button.primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(244, 208, 63, 0.6);
-  background: linear-gradient(135deg, #f1c40f 0%, #d68910 100%);
+  box-shadow: 0 6px 20px rgba(248, 225, 108, 0.6);
+  background: #F28482;
+  color: white;
 }
 
 .cta-button.secondary {
   background: white;
-  color: #d68910;
-  border: 2px solid #d68910;
+  color: #333333;
+  border: 2px solid #84A59D;
   font-weight: 600;
 }
 
 .cta-button.secondary:hover {
-  background: #fef9e7;
+  background: #84A59D;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(214, 137, 16, 0.3);
+  box-shadow: 0 4px 12px rgba(132, 165, 157, 0.3);
 }
 
 /* Animation Classes */

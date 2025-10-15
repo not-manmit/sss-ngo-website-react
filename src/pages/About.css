@@ -4,8 +4,8 @@
 }
 
 .page-hero {
-  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, #F8E16C 0%, #F28482 100%);
+  color: #333333;
   padding: 6rem 2rem;
   text-align: center;
   position: relative;
@@ -25,15 +25,15 @@
 
 /* Our Approach Section */
 .approach-section {
-  background: #fef9e7;
+  background: #FFFAF2;
 }
 
 .approach-image {
-  background: linear-gradient(135deg, #f4d03f 0%, #f1c40f 100%);
+  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
 }
 
 .content-text p strong {
-  color: #d68910;
+  color: #F28482;
   font-weight: 600;
 }
 
@@ -80,7 +80,7 @@
 
 .section-heading {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: #333333;
   margin-bottom: 2rem;
   font-weight: 700;
 }
@@ -99,7 +99,7 @@
 .image-box {
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -109,7 +109,7 @@
 
 /* Vision & Mission */
 .vision-mission-section {
-  background: linear-gradient(135deg, #fef9e7 0%, #f9e79f 100%);
+  background: linear-gradient(135deg, #FFFAF2 0%, #fef5e7 100%);
 }
 
 .vm-grid {
@@ -132,7 +132,7 @@
 
 .vm-card h2 {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #333333;
   margin-bottom: 1.5rem;
 }
 
@@ -171,7 +171,7 @@
 
 .value-card h3 {
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: #333333;
   margin-bottom: 1rem;
 }
 
@@ -238,8 +238,8 @@
 
 /* Impact Statement */
 .impact-statement {
-  background: linear-gradient(135deg, #f4d03f 0%, #f1c40f 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, #84A59D 0%, #6b8a7f 100%);
+  color: white;
   padding: 5rem 2rem;
   text-align: center;
 }

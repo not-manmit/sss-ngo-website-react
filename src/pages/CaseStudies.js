@@ -23,17 +23,17 @@ const CaseStudies = () => {
   const caseStudies = [
     {
       id: 1,
-      title: "Education for Rural Communities",
-      location: "Village Rampur, Bihar",
-      year: "2023",
-      image: "🎓",
-      challenge: "Limited access to quality education for 500+ children in remote villages",
-      solution: "Established 3 community learning centers with qualified teachers and digital resources",
+      title: "Empowering Women and Communities through Handcrafted Creations",
+      location: "Runwal Elegante, Mumbai",
+      year: "2024",
+      image: "💫",
+      challenge: "Limited livelihood opportunities for tribal women and individuals with physical challenges",
+      solution: "Participated in an All-Women Entrepreneurs Exhibition, showcasing handcrafted Diwali diyas, decorative items, jute bags, incense sticks, masalas, and eco-friendly baskets — all made by marginalized artisans",
       impact: [
-        "500+ children enrolled",
-        "85% improvement in literacy rates",
-        "20 local teachers trained",
-        "100% pass rate in primary education"
+        "120 corporate diya orders received",
+        "100% sales proceeds directed towards adolescent girls’ health & hygiene programs",
+        "50+ women artisans gained sustainable income",
+        "Strengthened self-reliance & community pride"
       ],
       testimonial: {
         quote: "My daughter can now read and write. This has changed our family's future forever.",

@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f9e79f 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #F8E16C 0%, #F28482 100%);
   overflow: hidden;
 }
 
@@ -35,7 +35,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  color: #2c3e50;
+  color: #333333;
   padding: 0 2rem;
   max-width: 900px;
 }
@@ -49,7 +49,7 @@
 }
 
 .highlight {
-  color: #d68910;
+  color: white;
   display: inline-block;
 }
 
@@ -73,8 +73,8 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: #2c3e50;
-  opacity: 0.8;
+  color: white;
+  opacity: 0.9;
 }
 
 .scroll-indicator span {
@@ -88,8 +88,8 @@
 .scroll-arrow {
   width: 30px;
   height: 30px;
-  border-right: 2px solid #2c3e50;
-  border-bottom: 2px solid #2c3e50;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
   transform: rotate(45deg);
   margin: 0 auto;
   animation: scroll-bounce 2s infinite;
