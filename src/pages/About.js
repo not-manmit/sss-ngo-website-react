@@ -1,8 +1,62 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './About.css';
 
+gsap.registerPlugin(TextPlugin, ScrollTrigger);
+
 const About = () => {
+  const pageTitleRef = useRef(null);
+  const sectionTitlesRef = useRef([]);
+
   useEffect(() => {
+    // Page title animation - 3D flip effect
+    const pageTitle = pageTitleRef.current;
+    if (pageTitle) {
+      const text = pageTitle.textContent;
+      pageTitle.innerHTML = text
+        .split('')
+        .map((char, i) => `<span class="char" style="display: inline-block; transform-style: preserve-3d;">${char === ' ' ? '&nbsp;' : char}</span>`)
+        .join('');
+
+      gsap.from(pageTitle.querySelectorAll('.char'), {
+        duration: 1,
+        opacity: 0,
+        rotationY: 180,
+        scale: 0,
+        transformOrigin: 'center center',
+        ease: 'elastic.out(1, 0.5)',
+        stagger: 0.05,
+      });
+    }
+
+    // Section titles - Bounce in animation
+    sectionTitlesRef.current.forEach((title) => {
+      if (title) {
+        const text = title.textContent;
+        title.innerHTML = text
+          .split(' ')
+          .map(word => `<span class="word" style="display: inline-block; margin: 0 0.25rem;">${word}</span>`)
+          .join('');
+
+        gsap.from(title.querySelectorAll('.word'), {
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+          duration: 0.6,
+          opacity: 0,
+          scale: 0.5,
+          y: 80,
+          rotation: -15,
+          ease: 'back.out(2)',
+          stagger: 0.08,
+        });
+      }
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,7 +71,10 @@ const About = () => {
     const elements = document.querySelectorAll('.fade-in, .slide-up');
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
@@ -25,7 +82,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1 className="page-title fade-in">About Us</h1>
+          <h1 className="page-title fade-in" ref={pageTitleRef}>About Us</h1>
           <p className="page-subtitle fade-in">
             Dedicated to creating positive change through compassion and action
           </p>
@@ -37,7 +94,7 @@ const About = () => {
         <div className="container">
           <div className="content-grid">
             <div className="content-text slide-up">
-              <h2 className="section-heading">Our Story</h2>
+              <h2 className="section-heading" ref={el => sectionTitlesRef.current[0] = el}>Our Story</h2>
               <p>
                 We are a non-governmental, non-profit organisation dedicated to closing this gap. Through outreach programs, workshops, seminars, talks, and distribution of health-related products, we strive to empower people with knowledge, tools, and habits that help them live healthier, more dignified lives.
               </p>
@@ -70,7 +127,7 @@ const About = () => {
               </div>
             </div>
             <div className="content-text slide-up">
-              <h2 className="section-heading">Our Approach</h2>
+              <h2 className="section-heading" ref={el => sectionTitlesRef.current[1] = el}>Our Approach</h2>
               <p>
                 At Selfless Serving Society, our approach focuses on empowering women and girls through education, awareness, and community support. We conduct workshops and sessions for adolescent girls on menstrual health, puberty, body changes, self-care, hygiene, and breaking taboos. By creating safe spaces in schools and communities, we encourage open conversations, provide guidance, and ensure access to sanitary supplies without shame.
               </p>
@@ -122,7 +179,7 @@ const About = () => {
       {/* Core Values */}
       <section className="section">
         <div className="container">
-          <h2 className="section-heading centered">Our Core Values</h2>
+          <h2 className="section-heading centered" ref={el => sectionTitlesRef.current[2] = el}>Our Core Values</h2>
           <p className="section-subheading centered">
             The principles that guide everything we do
           </p>
@@ -164,7 +221,7 @@ const About = () => {
       {/* Team Section */}
       <section className="section team-section">
         <div className="container">
-          <h2 className="section-heading centered">Our Leadership</h2>
+          <h2 className="section-heading centered" ref={el => sectionTitlesRef.current[3] = el}>Our Leadership</h2>
           <p className="section-subheading centered">
             Experienced professionals committed to social change
           </p>

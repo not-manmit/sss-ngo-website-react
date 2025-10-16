@@ -1,5 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './CaseStudies.css';
+
+gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 // Import photos for case study 1
 const caseStudy1Photos = [
@@ -18,9 +23,46 @@ const caseStudy1Photos = [
 ];
 
 const CaseStudies = () => {
+  const pageTitleRef = useRef(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   useEffect(() => {
+    // Page title - Spiral entrance animation
+    const pageTitle = pageTitleRef.current;
+    if (pageTitle) {
+      const text = pageTitle.textContent;
+      pageTitle.innerHTML = text
+        .split('')
+        .map((char, i) => `<span class="char" style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`)
+        .join('');
+
+      const chars = pageTitle.querySelectorAll('.char');
+      gsap.from(chars, {
+        duration: 1.2,
+        opacity: 0,
+        scale: 0,
+        rotation: (index) => index * 30,
+        transformOrigin: 'center center',
+        ease: 'back.out(1.7)',
+        stagger: {
+          each: 0.06,
+          from: 'edges',
+        },
+      });
+
+      // Add continuous subtle animation
+      gsap.to(chars, {
+        y: -5,
+        duration: 2,
+        ease: 'sine.inOut',
+        stagger: {
+          each: 0.05,
+          repeat: -1,
+          yoyo: true,
+        },
+      });
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,7 +77,10 @@ const CaseStudies = () => {
     const elements = document.querySelectorAll('.fade-in, .slide-up');
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   // Navigation handlers
@@ -105,7 +150,7 @@ const CaseStudies = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1 className="page-title fade-in">Case Studies</h1>
+          <h1 className="page-title fade-in" ref={pageTitleRef}>Case Studies</h1>
           <p className="page-subtitle fade-in">
             Real stories of transformation and lasting impact in communities we serve
           </p>
