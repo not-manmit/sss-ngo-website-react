@@ -39,7 +39,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 20px;
-  margin-top: 80px;
+  margin-top: 180px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -113,6 +113,48 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Special layout for card 2 */
+.case-study-card:nth-child(2) {
+  padding: 0;
+  overflow: hidden;
+}
+
+.case-study-card:nth-child(2) .case-study-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 500px;
+}
+
+.case-study-card:nth-child(2) .photo-slider {
+  margin-bottom: 0;
+  border-radius: 0;
+  height: 100%;
+  min-height: 500px;
+}
+
+.case-study-card:nth-child(2) .slider-container {
+  height: 100%;
+  min-height: 500px;
+}
+
+.case-study-card:nth-child(2) .case-study-info-section {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.case-study-card:nth-child(2) .case-study-header {
+  border-bottom: none;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+
+.case-study-card:nth-child(2) .case-study-content {
+  gap: 20px;
+}
+
 .case-study-header {
   display: flex;
   align-items: center;
@@ -136,7 +178,7 @@
 
 /* Photo Slider */
 .photo-slider {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -408,6 +450,21 @@
 }
 
 /* Responsive Design */
+@media (max-width: 968px) {
+  /* Make card 2 stack vertically on tablets and mobile */
+  .case-study-card:nth-child(2) .case-study-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-card:nth-child(2) .photo-slider {
+    min-height: 350px;
+  }
+
+  .case-study-card:nth-child(2) .slider-container {
+    min-height: 350px;
+  }
+}
+
 @media (max-width: 768px) {
   .page-title {
     font-size: 2.5rem;
@@ -429,6 +486,14 @@
     padding: 25px;
   }
 
+  .case-study-card:nth-child(2) {
+    padding: 0;
+  }
+
+  .case-study-card:nth-child(2) .case-study-info-section {
+    padding: 25px;
+  }
+
   .case-study-header {
     flex-direction: column;
     text-align: center;
@@ -442,6 +507,14 @@
 
   .slider-container {
     height: 300px;
+  }
+
+  .case-study-card:nth-child(2) .photo-slider {
+    min-height: 300px;
+  }
+
+  .case-study-card:nth-child(2) .slider-container {
+    min-height: 300px;
   }
 
   .slider-arrow {
@@ -486,6 +559,18 @@
 
   .slider-container {
     height: 250px;
+  }
+
+  .case-study-card:nth-child(2) .photo-slider {
+    min-height: 250px;
+  }
+
+  .case-study-card:nth-child(2) .slider-container {
+    min-height: 250px;
+  }
+
+  .case-study-card:nth-child(2) .case-study-info-section {
+    padding: 20px;
   }
 
   .slider-arrow {

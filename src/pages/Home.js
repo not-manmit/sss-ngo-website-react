@@ -1,9 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import sssLogo from '../assets/images/SSS_LOGO_main-removebg-preview.png';
 import './Home.css';
 
+// Import hero images (add your images to src/assets/home hero image/)
+// Uncomment these lines and add your actual image files
+import heroImage1 from '../assets/home hero image/image1.jpg';
+import heroImage2 from '../assets/home hero image/image2.jpg';
+import heroImage3 from '../assets/home hero image/image3.jpg';
+
+// Placeholder images array - replace with your actual images
+const heroImages = [
+  heroImage1,
+  heroImage2,
+  heroImage3,
+];
+
 const Home = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      (prevIndex + 1) % heroImages.length
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1
+    );
+  };
+
   useEffect(() => {
     // Intersection Observer for animations
     const observer = new IntersectionObserver(
@@ -20,18 +47,85 @@ const Home = () => {
     const elements = document.querySelectorAll('.fade-in, .slide-up');
     elements.forEach((el) => observer.observe(el));
 
+    // Auto-play slider (optional)
+    const autoPlay = setInterval(() => {
+      if (heroImages.length > 0) {
+        nextImage();
+      }
+    }, 5000); // Change image every 5 seconds
+
     return () => {
       observer.disconnect();
+      clearInterval(autoPlay);
     };
-  }, []);
+  }, [currentImageIndex]);
 
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Merged Hero + Navbar Section */}
       <section className="hero">
+        {/* Background Image Slider */}
+        {heroImages.length > 0 && (
+          <div className="hero-background-slider">
+            {heroImages.map((image, index) => (
+              <div
+                key={index}
+                className={`hero-bg-image ${index === currentImageIndex ? 'active' : ''}`}
+                style={{ backgroundImage: `url(${image})` }}
+              ></div>
+            ))}
+            
+            {/* Navigation Arrows */}
+            <button className="hero-arrow hero-arrow-left" onClick={prevImage}>
+              ‹
+            </button>
+            <button className="hero-arrow hero-arrow-right" onClick={nextImage}>
+              ›
+            </button>
+
+            {/* Image Indicators */}
+            <div className="hero-indicators">
+              {heroImages.map((_, index) => (
+                <span
+                  key={index}
+                  className={`hero-indicator ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIndex(index)}
+                ></span>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="hero-overlay"></div>
+        
+        {/* Integrated Navbar in Hero */}
+        <div className="hero-navbar">
+          <div className="hero-navbar-container">
+            <Link to="/" className="hero-navbar-logo">
+              Selfless <span className="logo-highlight">Serving Society</span>
+            </Link>
+            <ul className="hero-nav-menu">
+              <li className="hero-nav-item">
+                <Link to="/" className="hero-nav-link active">Home</Link>
+              </li>
+              <li className="hero-nav-item">
+                <Link to="/about" className="hero-nav-link">About Us</Link>
+              </li>
+              <li className="hero-nav-item">
+                <Link to="/what-we-do" className="hero-nav-link">What We Do</Link>
+              </li>
+              <li className="hero-nav-item">
+                <Link to="/case-studies" className="hero-nav-link">Case Studies</Link>
+              </li>
+              <li className="hero-nav-item">
+                <Link to="/contact" className="hero-nav-link hero-nav-link-button">Contact Us</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div className="hero-content">
-          <h1 className="hero-title">
+          <h1 className="hero-title fade-in">
             Helping People, Changing Lives            
           </h1>
           <p className="hero-subtitle">

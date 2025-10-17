@@ -1,70 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect } from 'react';
 import './WhatWeDo.css';
 
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
-
 const WhatWeDo = () => {
-  const pageTitleRef = useRef(null);
-  const sectionTitlesRef = useRef([]);
-
   useEffect(() => {
-    // Page title - Wave animation
-    const pageTitle = pageTitleRef.current;
-    if (pageTitle) {
-      const text = pageTitle.textContent;
-      pageTitle.innerHTML = text
-        .split('')
-        .map((char, i) => `<span class="char" style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`)
-        .join('');
-
-      gsap.from(pageTitle.querySelectorAll('.char'), {
-        duration: 0.8,
-        opacity: 0,
-        y: -100,
-        rotationZ: 360,
-        scale: 0.5,
-        ease: 'elastic.out(1, 0.6)',
-        stagger: {
-          each: 0.04,
-          from: 'center',
-        },
-      });
-    }
-
-    // Section titles - Glitch effect style
-    sectionTitlesRef.current.forEach((title) => {
-      if (title) {
-        gsap.from(title, {
-          scrollTrigger: {
-            trigger: title,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-          duration: 0.6,
-          opacity: 0,
-          x: -100,
-          skewX: -10,
-          ease: 'power4.out',
-        });
-
-        // Add glowing effect on scroll
-        gsap.to(title, {
-          scrollTrigger: {
-            trigger: title,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-          textShadow: '0 0 20px rgba(255, 210, 63, 0.8)',
-          duration: 0.5,
-          yoyo: true,
-          repeat: 1,
-        });
-      }
-    });
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -81,7 +19,6 @@ const WhatWeDo = () => {
 
     return () => {
       observer.disconnect();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
@@ -204,7 +141,7 @@ const WhatWeDo = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1 className="page-title fade-in" ref={pageTitleRef}>What We Do</h1>
+          <h1 className="page-title fade-in">What We Do</h1>
           <p className="page-subtitle fade-in">
             Transforming lives through comprehensive programs focused on education, health, and sustainable development
           </p>
@@ -215,7 +152,7 @@ const WhatWeDo = () => {
       <section className="section intro-section">
         <div className="container">
           <div className="intro-content fade-in">
-            <h2 className="section-heading centered" ref={el => sectionTitlesRef.current[0] = el}>Our Mission in Action</h2>
+            <h2 className="section-heading centered">Our Mission in Action</h2>
             <p className="intro-text">
               At Selfless Serving Society, we believe in creating lasting change through holistic community development. 
               Our programs are designed to address the root causes of poverty and inequality, empowering individuals 
@@ -228,7 +165,7 @@ const WhatWeDo = () => {
       {/* Programs Grid */}
       <section className="section programs-section">
         <div className="container">
-          <h2 className="section-heading centered" ref={el => sectionTitlesRef.current[1] = el}>Our Core Programs</h2>
+          <h2 className="section-heading centered">Our Core Programs</h2>
           <p className="section-subheading centered">
             Comprehensive initiatives addressing critical needs across multiple sectors
           </p>
@@ -265,7 +202,7 @@ const WhatWeDo = () => {
       {/* Our Approach */}
       <section className="section approach-section">
         <div className="container">
-          <h2 className="section-heading centered" ref={el => sectionTitlesRef.current[2] = el}>Our Approach</h2>
+          <h2 className="section-heading centered">Our Approach</h2>
           <p className="section-subheading centered">
             A systematic and sustainable methodology that ensures lasting impact
           </p>
@@ -288,7 +225,7 @@ const WhatWeDo = () => {
       {/* Impact Stats */}
       <section className="section stats-section">
         <div className="container">
-          <h2 className="section-heading centered white" ref={el => sectionTitlesRef.current[3] = el}>Collective Impact</h2>
+          <h2 className="section-heading centered white">Collective Impact</h2>
           <div className="stats-grid">
             <div className="stat-card fade-in">
               <div className="stat-icon">👨‍👩‍👧‍👦</div>
@@ -317,7 +254,7 @@ const WhatWeDo = () => {
       {/* Values Section */}
       <section className="section values-section">
         <div className="container">
-          <h2 className="section-heading centered" ref={el => sectionTitlesRef.current[4] = el}>Our Core Values</h2>
+          <h2 className="section-heading centered">Our Core Values</h2>
           <div className="values-grid">
             <div className="value-card slide-up">
               <div className="value-icon">💫</div>

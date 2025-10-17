@@ -1,10 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useState } from 'react';
 import './CaseStudies.css';
-
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 // Import photos for case study 1
 const caseStudy1Photos = [
@@ -22,47 +17,20 @@ const caseStudy1Photos = [
   require('../assets/Case Study 1/cs1 12.jpg'),
 ];
 
+// Import photos for case study 2
+const caseStudy2Photos = [
+  require('../assets/Case Study 2/cs2 1.jpg'),
+  require('../assets/Case Study 2/cs2 2.jpg'),
+  require('../assets/Case Study 2/cs2 3.jpg'),
+  require('../assets/Case Study 2/cs2 4.jpg'),
+  require('../assets/Case Study 2/cs2 5.jpg'),
+];
+
 const CaseStudies = () => {
-  const pageTitleRef = useRef(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [currentPhotoIndexCS2, setCurrentPhotoIndexCS2] = useState(0);
 
   useEffect(() => {
-    // Page title - Spiral entrance animation
-    const pageTitle = pageTitleRef.current;
-    if (pageTitle) {
-      const text = pageTitle.textContent;
-      pageTitle.innerHTML = text
-        .split('')
-        .map((char, i) => `<span class="char" style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`)
-        .join('');
-
-      const chars = pageTitle.querySelectorAll('.char');
-      gsap.from(chars, {
-        duration: 1.2,
-        opacity: 0,
-        scale: 0,
-        rotation: (index) => index * 30,
-        transformOrigin: 'center center',
-        ease: 'back.out(1.7)',
-        stagger: {
-          each: 0.06,
-          from: 'edges',
-        },
-      });
-
-      // Add continuous subtle animation
-      gsap.to(chars, {
-        y: -5,
-        duration: 2,
-        ease: 'sine.inOut',
-        stagger: {
-          each: 0.05,
-          repeat: -1,
-          yoyo: true,
-        },
-      });
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -79,11 +47,10 @@ const CaseStudies = () => {
 
     return () => {
       observer.disconnect();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
-  // Navigation handlers
+  // Navigation handlers for Case Study 1
   const nextPhoto = () => {
     setCurrentPhotoIndex((prevIndex) => 
       (prevIndex + 1) % caseStudy1Photos.length
@@ -93,6 +60,19 @@ const CaseStudies = () => {
   const prevPhoto = () => {
     setCurrentPhotoIndex((prevIndex) => 
       prevIndex === 0 ? caseStudy1Photos.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Navigation handlers for Case Study 2
+  const nextPhotoCS2 = () => {
+    setCurrentPhotoIndexCS2((prevIndex) => 
+      (prevIndex + 1) % caseStudy2Photos.length
+    );
+  };
+
+  const prevPhotoCS2 = () => {
+    setCurrentPhotoIndexCS2((prevIndex) => 
+      prevIndex === 0 ? caseStudy2Photos.length - 1 : prevIndex - 1
     );
   };
 
@@ -115,17 +95,18 @@ const CaseStudies = () => {
     },
     {
       id: 2,
-      title: "Women's Empowerment Initiative",
-      location: "Urban Slums, Delhi",
+      title: "KAPAAD Project: Turning Compassion into Sustainable Action",
+      location: "Mumbai, Maharashtra",
       year: "2023",
       image: "💪",
-      challenge: "High unemployment rate among women leading to economic dependency",
-      solution: "Vocational training programs in tailoring, handicrafts, and digital skills",
+      photos: caseStudy2Photos,
+      challenge: "Discarded usable clothes contributing to textile waste and lack of access to clothing for underprivileged families.",
+      solution: "Encouraged individuals to donate wearable, clean clothes instead of discarding them. Selfless Serving Society (SSS) acted as a collection partner, gathering clothes from communities and handing them to Project Mumbai for segregation and repurposing.",
       impact: [
-        "300+ women trained",
-        "75% employment rate",
-        "50+ self-help groups formed",
-        "₹2.5 Cr income generated"
+        "31 kg of clothes collected in the first drive",
+        "Usable garments distributed to families and children in need",
+        "Worn-out clothes repurposed into eco-friendly items like floor wipes and mats",
+        "Promoted sustainability and social responsibility within communities"
       ]
     },
     {
@@ -150,7 +131,7 @@ const CaseStudies = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1 className="page-title fade-in" ref={pageTitleRef}>Case Studies</h1>
+          <h1 className="page-title fade-in">Case Studies</h1>
           <p className="page-subtitle fade-in">
             Real stories of transformation and lasting impact in communities we serve
           </p>
@@ -175,73 +156,182 @@ const CaseStudies = () => {
         <div className="container">
           {caseStudies.map((study, index) => (
             <div key={study.id} className={`case-study-card slide-up ${index % 2 === 0 ? 'left' : 'right'}`}>
-              <div className="case-study-header">
-                <div className="case-study-icon">{study.image}</div>
-                <div className="case-study-meta">
-                  <h3 className="case-study-title">{study.title}</h3>
-                  <div className="case-study-info">
-                    <span className="location">📍 {study.location}</span>
-                    <span className="year">📅 {study.year}</span>
-                  </div>
-                </div>
-              </div>
+              {study.id === 2 ? (
+                // Special layout for card 2
+                <div className="case-study-wrapper">
+                  {/* Photo Slider on Left */}
+                  {study.photos && study.photos.length > 0 && (
+                    <div className="photo-slider">
+                      <div className="slider-container">
+                        {study.photos.map((photo, photoIndex) => (
+                          <img
+                            key={photoIndex}
+                            src={photo}
+                            alt={`${study.title} - Photo ${photoIndex + 1}`}
+                            className={`slider-image ${
+                              photoIndex === currentPhotoIndexCS2 
+                              ? 'active' 
+                              : ''
+                            }`}
+                          />
+                        ))}
+                        
+                        {/* Navigation Arrows */}
+                        <button 
+                          className="slider-arrow slider-arrow-left" 
+                          onClick={prevPhotoCS2}
+                        >
+                          ‹
+                        </button>
+                        <button 
+                          className="slider-arrow slider-arrow-right" 
+                          onClick={nextPhotoCS2}
+                        >
+                          ›
+                        </button>
+                      </div>
+                      <div className="slider-indicators">
+                        {study.photos.map((_, photoIndex) => (
+                          <span
+                            key={photoIndex}
+                            className={`indicator ${
+                              photoIndex === currentPhotoIndexCS2
+                              ? 'active' 
+                              : ''
+                            }`}
+                            onClick={() => setCurrentPhotoIndexCS2(photoIndex)}
+                          ></span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
-              {/* Photo Slider - Only for first case study */}
-              {study.photos && study.photos.length > 0 && (
-                <div className="photo-slider">
-                  <div className="slider-container">
-                    {study.photos.map((photo, photoIndex) => (
-                      <img
-                        key={photoIndex}
-                        src={photo}
-                        alt={`${study.title} - Photo ${photoIndex + 1}`}
-                        className={`slider-image ${photoIndex === currentPhotoIndex ? 'active' : ''}`}
-                      />
-                    ))}
-                    
-                    {/* Navigation Arrows */}
-                    <button className="slider-arrow slider-arrow-left" onClick={prevPhoto}>
-                      ‹
-                    </button>
-                    <button className="slider-arrow slider-arrow-right" onClick={nextPhoto}>
-                      ›
-                    </button>
-                  </div>
-                  <div className="slider-indicators">
-                    {study.photos.map((_, photoIndex) => (
-                      <span
-                        key={photoIndex}
-                        className={`indicator ${photoIndex === currentPhotoIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentPhotoIndex(photoIndex)}
-                      ></span>
-                    ))}
+                  {/* Info on Right */}
+                  <div className="case-study-info-section">
+                    <div className="case-study-header">
+                      <div className="case-study-icon">{study.image}</div>
+                      <div className="case-study-meta">
+                        <h3 className="case-study-title">{study.title}</h3>
+                        <div className="case-study-info">
+                          <span className="location">📍 {study.location}</span>
+                          <span className="year">📅 {study.year}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="case-study-content">
+                      <div className="case-study-section">
+                        <h4>The Challenge</h4>
+                        <p>{study.challenge}</p>
+                      </div>
+
+                      <div className="case-study-section">
+                        <h4>Our Solution</h4>
+                        <p>{study.solution}</p>
+                      </div>
+
+                      <div className="case-study-section">
+                        <h4>Impact Achieved</h4>
+                        <ul className="impact-list">
+                          {study.impact.map((item, idx) => (
+                            <li key={idx}>
+                              <span className="check-icon">✓</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              ) : (
+                // Default layout for other cards
+                <>
+                  <div className="case-study-header">
+                    <div className="case-study-icon">{study.image}</div>
+                    <div className="case-study-meta">
+                      <h3 className="case-study-title">{study.title}</h3>
+                      <div className="case-study-info">
+                        <span className="location">📍 {study.location}</span>
+                        <span className="year">📅 {study.year}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Photo Slider */}
+                  {study.photos && study.photos.length > 0 && (
+                    <div className="photo-slider">
+                      <div className="slider-container">
+                        {study.photos.map((photo, photoIndex) => (
+                          <img
+                            key={photoIndex}
+                            src={photo}
+                            alt={`${study.title} - Photo ${photoIndex + 1}`}
+                            className={`slider-image ${
+                              photoIndex === (study.id === 1 ? currentPhotoIndex : 0) 
+                              ? 'active' 
+                              : ''
+                            }`}
+                          />
+                        ))}
+                        
+                        {/* Navigation Arrows */}
+                        <button 
+                          className="slider-arrow slider-arrow-left" 
+                          onClick={study.id === 1 ? prevPhoto : undefined}
+                        >
+                          ‹
+                        </button>
+                        <button 
+                          className="slider-arrow slider-arrow-right" 
+                          onClick={study.id === 1 ? nextPhoto : undefined}
+                        >
+                          ›
+                        </button>
+                      </div>
+                      <div className="slider-indicators">
+                        {study.photos.map((_, photoIndex) => (
+                          <span
+                            key={photoIndex}
+                            className={`indicator ${
+                              photoIndex === (study.id === 1 ? currentPhotoIndex : 0)
+                              ? 'active' 
+                              : ''
+                            }`}
+                            onClick={() => {
+                              if (study.id === 1) setCurrentPhotoIndex(photoIndex);
+                            }}
+                          ></span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="case-study-content">
+                    <div className="case-study-section">
+                      <h4>The Challenge</h4>
+                      <p>{study.challenge}</p>
+                    </div>
+
+                    <div className="case-study-section">
+                      <h4>Our Solution</h4>
+                      <p>{study.solution}</p>
+                    </div>
+
+                    <div className="case-study-section">
+                      <h4>Impact Achieved</h4>
+                      <ul className="impact-list">
+                        {study.impact.map((item, idx) => (
+                          <li key={idx}>
+                            <span className="check-icon">✓</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </>
               )}
-
-              <div className="case-study-content">
-                <div className="case-study-section">
-                  <h4>The Challenge</h4>
-                  <p>{study.challenge}</p>
-                </div>
-
-                <div className="case-study-section">
-                  <h4>Our Solution</h4>
-                  <p>{study.solution}</p>
-                </div>
-
-                <div className="case-study-section">
-                  <h4>Impact Achieved</h4>
-                  <ul className="impact-list">
-                    {study.impact.map((item, idx) => (
-                      <li key={idx}>
-                        <span className="check-icon">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
             </div>
           ))}
         </div>

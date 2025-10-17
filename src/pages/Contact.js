@@ -1,15 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
 
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
-
 const Contact = () => {
-  const pageTitleRef = useRef(null);
-  const sectionTitlesRef = useRef([]);
-  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,49 +13,6 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    // Page title - Magnetic letter effect
-    const pageTitle = pageTitleRef.current;
-    if (pageTitle) {
-      const text = pageTitle.textContent;
-      pageTitle.innerHTML = text
-        .split('')
-        .map((char, i) => `<span class="char" style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`)
-        .join('');
-
-      gsap.from(pageTitle.querySelectorAll('.char'), {
-        duration: 1,
-        opacity: 0,
-        scale: 0,
-        rotation: 360,
-        transformOrigin: 'center center',
-        ease: 'elastic.out(1, 0.5)',
-        stagger: {
-          each: 0.05,
-          from: 'random',
-        },
-      });
-    }
-
-    // Section titles - Slide and fade from different directions
-    sectionTitlesRef.current.forEach((title, index) => {
-      if (title) {
-        const direction = index % 2 === 0 ? 100 : -100;
-        gsap.from(title, {
-          scrollTrigger: {
-            trigger: title,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-          duration: 0.8,
-          opacity: 0,
-          x: direction,
-          rotationX: 45,
-          transformOrigin: '50% 50%',
-          ease: 'power3.out',
-        });
-      }
-    });
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -80,7 +29,6 @@ const Contact = () => {
 
     return () => {
       observer.disconnect();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
@@ -115,7 +63,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="page-hero-content">
-          <h1 className="page-title fade-in" ref={pageTitleRef}>Contact Us</h1>
+          <h1 className="page-title fade-in">Contact Us</h1>
           <p className="page-subtitle fade-in">
             We'd love to hear from you. Let's start a conversation.
           </p>

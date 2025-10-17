@@ -11,6 +11,11 @@
   transition: all 0.3s ease;
 }
 
+/* Hide navbar on home page */
+.navbar.hide-on-home {
+  display: none;
+}
+
 .navbar.scrolled {
   height: 70px;
   box-shadow: 0 4px 20px rgba(232, 177, 13, 0.2);

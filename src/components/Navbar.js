@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${location.pathname === '/' ? 'hide-on-home' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           Selfless <span className="logo-highlight">Serving Society</span>
