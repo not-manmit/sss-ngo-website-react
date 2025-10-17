@@ -20,15 +20,21 @@ const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      (prevIndex + 1) % heroImages.length
-    );
+    console.log('Next button clicked, current index:', currentImageIndex);
+    setCurrentImageIndex((prevIndex) => {
+      const newIndex = (prevIndex + 1) % heroImages.length;
+      console.log('Moving to index:', newIndex);
+      return newIndex;
+    });
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1
-    );
+    console.log('Previous button clicked, current index:', currentImageIndex);
+    setCurrentImageIndex((prevIndex) => {
+      const newIndex = prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1;
+      console.log('Moving to index:', newIndex);
+      return newIndex;
+    });
   };
 
   useEffect(() => {
@@ -47,18 +53,10 @@ const Home = () => {
     const elements = document.querySelectorAll('.fade-in, .slide-up');
     elements.forEach((el) => observer.observe(el));
 
-    // Auto-play slider (optional)
-    const autoPlay = setInterval(() => {
-      if (heroImages.length > 0) {
-        nextImage();
-      }
-    }, 5000); // Change image every 5 seconds
-
     return () => {
       observer.disconnect();
-      clearInterval(autoPlay);
     };
-  }, [currentImageIndex]);
+  }, []);
 
   return (
     <div className="home">
@@ -74,8 +72,14 @@ const Home = () => {
                 style={{ backgroundImage: `url(${image})` }}
               ></div>
             ))}
-            
-            {/* Navigation Arrows */}
+          </div>
+        )}
+
+        <div className="hero-overlay"></div>
+
+        {/* Navigation Arrows - moved outside slider */}
+        {heroImages.length > 0 && (
+          <>
             <button className="hero-arrow hero-arrow-left" onClick={prevImage}>
               ‹
             </button>
@@ -93,10 +97,8 @@ const Home = () => {
                 ></span>
               ))}
             </div>
-          </div>
+          </>
         )}
-
-        <div className="hero-overlay"></div>
         
         {/* Integrated Navbar in Hero */}
         <div className="hero-navbar">
