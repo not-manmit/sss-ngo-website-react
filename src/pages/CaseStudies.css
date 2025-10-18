@@ -183,6 +183,11 @@
   overflow: hidden;
   position: relative;
   background: #f7fafc;
+  transition: background 0.3s ease;
+}
+
+.photo-slider:has(.slider-image:hover) {
+  background: #2d3748;
 }
 
 .slider-container {
@@ -200,7 +205,14 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 0.5s ease, object-fit 0.5s ease;
+  transform: scale(1);
+  cursor: zoom-in;
+}
+
+.slider-image:hover {
+  transform: scale(0.85);
+  object-fit: contain;
 }
 
 .slider-image.active {
@@ -223,7 +235,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 3;
+  z-index: 10;
   transition: all 0.3s ease;
   border-radius: 50%;
   backdrop-filter: blur(5px);
@@ -509,6 +521,10 @@
     height: 300px;
   }
 
+  .slider-image:hover {
+    transform: scale(0.9);
+  }
+
   .case-study-card:nth-child(2) .photo-slider {
     min-height: 300px;
   }
@@ -559,6 +575,10 @@
 
   .slider-container {
     height: 250px;
+  }
+
+  .slider-image:hover {
+    transform: scale(0.92);
   }
 
   .case-study-card:nth-child(2) .photo-slider {

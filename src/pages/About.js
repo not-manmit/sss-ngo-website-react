@@ -1,7 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './About.css';
 
+// Import About Us page photos
+import ourStory1 from '../assets/About us page photoes/our story 1.jpg';
+import ourStory2 from '../assets/About us page photoes/our story 2.jpg';
+import approach1 from '../assets/About us page photoes/Approach 1.jpg';
+import approach2 from '../assets/About us page photoes/Approach 2.jpg';
+
+const ourStoryImages = [ourStory1, ourStory2];
+const approachImages = [approach1, approach2];
+
 const About = () => {
+  const [storyImageIndex, setStoryImageIndex] = useState(0);
+  const [approachImageIndex, setApproachImageIndex] = useState(0);
+
+  const nextStoryImage = () => {
+    setStoryImageIndex((prevIndex) => (prevIndex + 1) % ourStoryImages.length);
+  };
+
+  const prevStoryImage = () => {
+    setStoryImageIndex((prevIndex) => 
+      prevIndex === 0 ? ourStoryImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextApproachImage = () => {
+    setApproachImageIndex((prevIndex) => (prevIndex + 1) % approachImages.length);
+  };
+
+  const prevApproachImage = () => {
+    setApproachImageIndex((prevIndex) => 
+      prevIndex === 0 ? approachImages.length - 1 : prevIndex - 1
+    );
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -54,8 +86,23 @@ const About = () => {
               </p>
             </div>
             <div className="content-image slide-up">
-              <div className="image-box">
-                <span className="image-icon">📖</span>
+              <div className="image-box image-slider-container">
+                <img src={ourStoryImages[storyImageIndex]} alt="Our Story" className="about-image" />
+                <button className="image-arrow image-arrow-left" onClick={prevStoryImage}>
+                  ‹
+                </button>
+                <button className="image-arrow image-arrow-right" onClick={nextStoryImage}>
+                  ›
+                </button>
+                <div className="image-indicators">
+                  {ourStoryImages.map((_, index) => (
+                    <span
+                      key={index}
+                      className={`image-indicator ${index === storyImageIndex ? 'active' : ''}`}
+                      onClick={() => setStoryImageIndex(index)}
+                    ></span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -67,8 +114,23 @@ const About = () => {
         <div className="container">
           <div className="content-grid">
             <div className="content-image slide-up">
-              <div className="image-box approach-image">
-                <span className="image-icon">🎯</span>
+              <div className="image-box approach-image image-slider-container">
+                <img src={approachImages[approachImageIndex]} alt="Our Approach" className="about-image" />
+                <button className="image-arrow image-arrow-left" onClick={prevApproachImage}>
+                  ‹
+                </button>
+                <button className="image-arrow image-arrow-right" onClick={nextApproachImage}>
+                  ›
+                </button>
+                <div className="image-indicators">
+                  {approachImages.map((_, index) => (
+                    <span
+                      key={index}
+                      className={`image-indicator ${index === approachImageIndex ? 'active' : ''}`}
+                      onClick={() => setApproachImageIndex(index)}
+                    ></span>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="content-text slide-up">

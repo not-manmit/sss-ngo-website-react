@@ -29,7 +29,7 @@
 }
 
 .approach-image {
-  background: linear-gradient(135deg, #FFD23F 0%, #E8B10D 100%);
+  background: transparent;
 }
 
 .content-text p strong {
@@ -98,13 +98,99 @@
 
 .image-box {
   width: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, #FFD23F 0%, #E8B10D 100%);
+  aspect-ratio:1;
+  background: transparent;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 6rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-slider-container {
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  border-radius: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Image Navigation Arrows */
+.image-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+}
+
+.image-slider-container:hover .image-arrow {
+  opacity: 1;
+}
+
+.image-arrow:hover {
+  background: rgba(255, 210, 63, 0.9);
+  transform: translateY(-50%) scale(1.1);
+  color: #2C2C2C;
+}
+
+.image-arrow-left {
+  left: 15px;
+}
+
+.image-arrow-right {
+  right: 15px;
+}
+
+/* Image Indicators */
+.image-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.image-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.image-indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.image-indicator.active {
+  background: #FFD23F;
+  border-color: white;
+  transform: scale(1.3);
 }
 
 /* Vision & Mission */
@@ -308,5 +394,38 @@
 
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .image-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+
+  .image-arrow-left {
+    left: 10px;
+  }
+
+  .image-arrow-right {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-arrow {
+    opacity: 1;
+    width: 35px;
+    height: 35px;
+    font-size: 1.8rem;
+  }
+
+  .image-indicators {
+    bottom: 10px;
+    gap: 8px;
+  }
+
+  .image-indicator {
+    width: 8px;
+    height: 8px;
   }
 }
