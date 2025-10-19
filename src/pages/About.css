@@ -374,32 +374,58 @@
 
 /* Responsive */
 @media screen and (max-width: 968px) {
+  .page-hero {
+    padding: 5rem 1.5rem;
+  }
+
   .page-title {
     font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 4rem 1.5rem;
   }
 
   .content-grid,
   .vm-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .section-heading {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subheading {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .content-text p {
+    font-size: 1rem;
   }
 
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .image-arrow {
     width: 40px;
     height: 40px;
     font-size: 2rem;
+    opacity: 1;
+    background: rgba(255, 251, 234, 0.95);
   }
 
   .image-arrow-left {
@@ -409,14 +435,55 @@
   .image-arrow-right {
     right: 10px;
   }
+
+  .image-box {
+    aspect-ratio: 16/9;
+  }
+
+  .vm-card,
+  .value-card {
+    padding: 2rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  .page-hero {
+    padding: 4rem 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .content-text p {
+    font-size: 0.95rem;
+  }
+
   .image-arrow {
     opacity: 1;
     width: 35px;
     height: 35px;
     font-size: 1.8rem;
+  }
+
+  .image-arrow-left {
+    left: 8px;
+  }
+
+  .image-arrow-right {
+    right: 8px;
   }
 
   .image-indicators {
@@ -427,5 +494,34 @@
   .image-indicator {
     width: 8px;
     height: 8px;
+  }
+
+  .vm-card,
+  .value-card,
+  .team-card {
+    padding: 1.5rem;
+  }
+
+  .vm-icon,
+  .value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .vm-card h2,
+  .value-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .impact-statement {
+    padding: 3rem 1.5rem;
+  }
+
+  .statement-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .statement-content p {
+    font-size: 1rem;
   }
 }

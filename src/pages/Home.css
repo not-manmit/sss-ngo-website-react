@@ -599,7 +599,8 @@
 /* Responsive */
 @media screen and (max-width: 768px) {
   .hero {
-    min-height: 600px;
+    min-height: 100vh;
+    height: auto;
   }
 
   .hero-navbar {
@@ -615,61 +616,127 @@
   }
 
   .hero-arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 2.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+    background: rgba(255, 251, 234, 0.95);
   }
 
   .hero-arrow-left {
-    left: 15px;
+    left: 10px;
   }
 
   .hero-arrow-right {
-    right: 15px;
+    right: 10px;
   }
 
   .hero-indicators {
-    bottom: 100px;
+    bottom: 120px;
+    gap: 10px;
+  }
+
+  .hero-indicator {
+    width: 10px;
+    height: 10px;
   }
 
   .hero-content {
     margin-top: 0;
+    padding: 0 1.5rem;
   }
 
   .hero-title {
     font-size: 2.5rem;
     padding-top: 0;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
     font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+    font-size: 0.85rem;
   }
 
   .section-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
   }
 
   .work-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .work-card {
+    padding: 2rem;
+  }
+
+  .cta-section {
+    padding: 3rem 1.5rem;
   }
 
   .cta-title {
     font-size: 2rem;
   }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  .hero {
+    min-height: 100vh;
+  }
+
   .hero-navbar {
-    height: 60px;
+    height: 65px;
   }
 
   .hero-navbar-container {
@@ -683,32 +750,107 @@
   .hero-arrow {
     width: 40px;
     height: 40px;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-arrow-left {
-    left: 10px;
+    left: 8px;
   }
 
   .hero-arrow-right {
-    right: 10px;
+    right: 8px;
   }
 
   .hero-indicators {
-    bottom: 80px;
+    bottom: 100px;
     gap: 8px;
   }
 
   .hero-indicator {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .scroll-indicator {
+    bottom: 15px;
+    font-size: 0.8rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .section-text {
+    font-size: 0.95rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .work-card {
+    padding: 1.5rem;
+  }
+
+  .work-icon {
+    font-size: 2.5rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .cta-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
   }
 }

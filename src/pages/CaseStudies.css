@@ -465,27 +465,50 @@
 
 /* Responsive Design */
 @media (max-width: 968px) {
+  .page-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .page-title {
+    margin-top: 120px;
+    font-size: 2.5rem;
+  }
+
   /* Make card 2 stack vertically on tablets and mobile */
   .case-study-card:nth-child(2) .case-study-wrapper {
     grid-template-columns: 1fr;
   }
 
   .case-study-card:nth-child(2) .photo-slider {
-    min-height: 350px;
+    min-height: 400px;
   }
 
   .case-study-card:nth-child(2) .slider-container {
-    min-height: 350px;
+    min-height: 400px;
+  }
+
+  .slider-container {
+    height: 350px;
   }
 }
 
 @media (max-width: 768px) {
+  .page-hero {
+    padding: 100px 20px 60px;
+  }
+
   .page-title {
-    font-size: 2.5rem;
+    margin-top: 100px;
+    font-size: 2.2rem;
   }
 
   .page-subtitle {
     font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 60px 20px;
   }
 
   .section-heading {
@@ -497,7 +520,7 @@
   }
 
   .case-study-card {
-    padding: 25px;
+    padding: 2rem;
   }
 
   .case-study-card:nth-child(2) {
@@ -505,18 +528,20 @@
   }
 
   .case-study-card:nth-child(2) .case-study-info-section {
-    padding: 25px;
+    padding: 2rem;
   }
 
   .case-study-header {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
 
   .case-study-icon {
     width: 80px;
     height: 80px;
     font-size: 3rem;
+    margin: 0 auto;
   }
 
   .slider-container {
@@ -524,7 +549,7 @@
   }
 
   .slider-image:hover {
-    transform: scale(0.9);
+    transform: scale(0.92);
   }
 
   .case-study-card:nth-child(2) .photo-slider {
@@ -534,19 +559,30 @@
   .case-study-card:nth-child(2) .slider-container {
     min-height: 300px;
   }
-/*to change the cursor width and height*/
+
   .slider-arrow {
-    width: 40px;
-    height: 100px;
-    font-size: 2.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+    opacity: 1;
+    background: rgba(255, 251, 234, 0.95);
   }
 
   .slider-arrow-left {
-    left: 0px;
+    left: 10px;
   }
 
   .slider-arrow-right {
-    right: 0px;
+    right: 10px;
+  }
+
+  .slider-indicators {
+    gap: 10px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
   }
 
   .case-study-title {
@@ -555,14 +591,50 @@
 
   .case-study-info {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .case-study-section h4 {
+    font-size: 1.2rem;
+  }
+
+  .case-study-section p {
+    font-size: 0.95rem;
+  }
+
+  .impact-list li {
+    font-size: 0.95rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 2rem 1.5rem;
   }
 
   .stat-number {
     font-size: 2.5rem;
   }
 
+  .stat-label {
+    font-size: 0.95rem;
+  }
+
   .cta-content h2 {
     font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -571,8 +643,39 @@
     padding: 100px 15px 60px;
   }
 
+  .page-title {
+    margin-top: 80px;
+    font-size: 1.8rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+  }
+
   .section {
-    padding: 60px 15px;
+    padding: 50px 15px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .intro-content {
+    font-size: 0.95rem;
+  }
+
+  .case-study-card {
+    padding: 1.5rem;
+  }
+
+  .case-study-card:nth-child(2) .case-study-info-section {
+    padding: 1.5rem;
+  }
+
+  .case-study-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
   }
 
   .slider-container {
@@ -580,7 +683,7 @@
   }
 
   .slider-image:hover {
-    transform: scale(0.92);
+    transform: scale(0.95);
   }
 
   .case-study-card:nth-child(2) .photo-slider {
@@ -591,25 +694,79 @@
     min-height: 250px;
   }
 
-  .case-study-card:nth-child(2) .case-study-info-section {
-    padding: 20px;
-  }
-
   .slider-arrow {
     width: 40px;
     height: 40px;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .slider-arrow-left {
-    left: 5px;
+    left: 8px;
   }
 
   .slider-arrow-right {
-    right: 5px;
+    right: 8px;
+  }
+
+  .slider-indicators {
+    gap: 8px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .case-study-title {
+    font-size: 1.3rem;
+  }
+
+  .case-study-info {
+    font-size: 0.9rem;
+  }
+
+  .case-study-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .case-study-section p {
+    font-size: 0.9rem;
+  }
+
+  .impact-list li {
+    font-size: 0.9rem;
+    padding-left: 1.8rem;
+  }
+
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
   }
 
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 2rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
   }
 }

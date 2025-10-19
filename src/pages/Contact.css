@@ -362,13 +362,34 @@
 
 /* Responsive */
 @media screen and (max-width: 968px) {
+  .page-hero {
+    padding: 5rem 1.5rem;
+  }
+
   .page-title {
     font-size: 2.5rem;
   }
 
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    padding: 2rem;
+  }
+
   .form-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .form-row {
@@ -376,19 +397,94 @@
     gap: 1rem;
   }
 
-  .contact-info-grid {
-    grid-template-columns: 1fr;
-  }
-
   .faq-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .image-box {
     min-height: 300px;
+    aspect-ratio: 16/9;
   }
 
   .section-heading {
     font-size: 2rem;
+  }
+
+  .section-subheading {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-hero {
+    padding: 4rem 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-info-grid {
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .info-icon {
+    font-size: 2.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-card p {
+    font-size: 0.95rem;
+  }
+
+  .form-container {
+    gap: 2rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+
+  .btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .section-subheading {
+    font-size: 0.95rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+  }
+
+  .image-box {
+    min-height: 250px;
   }
 }
