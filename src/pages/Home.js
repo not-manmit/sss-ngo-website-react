@@ -218,22 +218,22 @@ const Home = () => {
             <div className="work-card slide-up">
               <div className="work-icon">📚</div>
               <h3>Education</h3>
-              <p>Providing quality education and learning opportunities to children in underserved areas.</p>
+              <p>Empowered 20 rural girls in Gujarat through tailoring training, helping them gain confidence, skills, and financial independence.</p>
             </div>
             <div className="work-card slide-up">
               <div className="work-icon">🏥</div>
               <h3>Healthcare</h3>
-              <p>Ensuring access to essential healthcare services and promoting wellness in communities.</p>
+              <p>Promoted menstrual hygiene and wellness by distributing essential hygiene kits to adolescent girls in marginalized communities.</p>
             </div>
             <div className="work-card slide-up">
               <div className="work-icon">🌱</div>
               <h3>Environment</h3>
-              <p>Promoting sustainable practices and environmental conservation for future generations.</p>
+              <p>Collected 31 kg of clothes under the KAPAAD Project, promoting recycling, zero-waste practices, and sustainable living.</p>
             </div>
             <div className="work-card slide-up">
               <div className="work-icon">💼</div>
               <h3>Livelihood</h3>
-              <p>Creating economic opportunities through skill development and entrepreneurship programs.</p>
+              <p>Created livelihood opportunities for 50+ tribal women and differently-abled artisans through handcrafted product sales and exhibitions.</p>
             </div>
           </div>
 

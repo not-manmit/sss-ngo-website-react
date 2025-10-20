@@ -27,85 +27,79 @@ const WhatWeDo = () => {
       id: 1,
       icon: "📚",
       title: "Education & Literacy",
-      description: "Empowering communities through quality education and literacy programs",
+      description: "Empowering rural girls through quality education and skill-based training",
       initiatives: [
-        "Community Learning Centers",
-        "Digital Literacy Programs",
-        "Adult Education Classes",
-        "Scholarship Programs",
-        "Teacher Training Workshops"
+        "Tailoring Training for Rural Girls in Gujarat",
+        "Skill-Based Learning Programs",
+        "Educational Support for Underprivileged Students",
+        "Vocational & Literacy Development Workshops",
       ],
-      impact: "5,000+ students educated annually"
+      impact: "20+ girls trained and empowered with livelihood skills"
     },
     {
       id: 2,
       icon: "🏥",
       title: "Healthcare Services",
-      description: "Providing accessible healthcare to underserved communities",
+      description: "Providing accessible healthcare and hygiene awareness to underserved communities",
       initiatives: [
-        "Mobile Health Clinics",
-        "Free Medical Camps",
-        "Maternal & Child Health",
-        "Vaccination Drives",
-        "Health Awareness Campaigns"
+        "Health & Hygiene Awareness for Adolescent Girls",
+        "Distribution of Sanitary Kits and Essentials",
+        "Wellness & Hygiene Campaigns in Rural Areas",
+        "Support for Women’s Health Programs",
       ],
-      impact: "10,000+ patients treated yearly"
+      impact: "100+ girls benefited through hygiene and wellness initiatives"
     },
     {
       id: 3,
       icon: "💼",
       title: "Livelihood & Skill Development",
-      description: "Creating sustainable livelihoods through skill training and employment",
+      description: "Creating sustainable income opportunities through skill training and entrepreneurship",
       initiatives: [
-        "Vocational Training Programs",
-        "Entrepreneurship Development",
-        "Women Self-Help Groups",
-        "Microfinance Support",
-        "Job Placement Assistance"
+        "Handcrafted Product Exhibitions (Runwal Elegante)",
+        "Training for Tribal Women & Differently-Abled Artisans",
+        "Corporate Order Partnerships for Handmade Goods",
+        "Community-Based Craft & Sales Programs",
       ],
-      impact: "3,000+ individuals trained"
+      impact: "50+ artisans gained sustainable income opportunities"
     },
     {
       id: 4,
       icon: "👧",
       title: "Women Empowerment",
-      description: "Promoting gender equality and empowering women to lead",
+      description: "Promoting gender equality and self-reliance through skill, creativity, and confidence",
       initiatives: [
-        "Leadership Training",
-        "Legal Awareness Programs",
-        "Financial Literacy",
-        "Self-Defense Workshops",
-        "Gender Sensitization"
+        "Tailoring Courses for Rural Girls",
+        "Women-Led Entrepreneurship Exhibitions",
+        "Financial Independence & Self-Reliance Programs",
+        "Inclusion of Differently-Abled Women in Livelihood Projects",
       ],
-      impact: "2,500+ women empowered"
+      impact: "70+ women empowered across rural and urban communities"
     },
     {
       id: 5,
       icon: "🌱",
       title: "Environmental Conservation",
-      description: "Protecting our planet through sustainable environmental practices",
+      description: "Encouraging sustainability and responsible consumption through community initiatives",
       initiatives: [
-        "Tree Plantation Drives",
-        "Waste Management Programs",
-        "Water Conservation Projects",
-        "Renewable Energy Promotion",
-        "Climate Change Awareness"
+        "KAPAAD Project – Clothes Reuse & Recycling Drive",
+        "Promotion of Zero-Waste Practices",
+        "Awareness on Sustainable Living",
+        "Textile Waste Repurposing (Mats & Cleaning Items)",
       ],
-      impact: "50,000+ trees planted"
+      impact: "31 kg of clothes collected and repurposed sustainably"
     },
     {
       id: 6,
       icon: "🤝",
       title: "Community Development",
-      description: "Building resilient and self-sufficient communities",
+      description: "Building resilient and compassionate communities through collective action",
       initiatives: [
-        "Infrastructure Development",
-        "Sanitation Programs",
-        "Community Centers",
-        "Youth Development Programs",
-        "Cultural Preservation"
+        "Flood Relief Drive at Rasikpur Village",
+        "Food Grain Collection & Distribution (650 kg)",
+        "Support to Old-Age Homes and Special-Needs Children",
+        "“Anna Daan” Community Contribution Campaign",
       ],
-      impact: "100+ villages transformed"
+      impact: "350+ kg food aid delivered to flood-affected families"
     }
   ];
 
