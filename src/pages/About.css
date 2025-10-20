@@ -131,7 +131,7 @@
 .image-box {
   width: 100%;
   aspect-ratio: 1;
-  background: #f7fafc;
+  background: transparent;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -140,11 +140,6 @@
   overflow: hidden;
   position: relative;
   max-width: 100%;
-  transition: background 0.3s ease;
-}
-
-.image-box:has(.about-image:hover) {
-  background: #2d3748;
 }
 
 .image-slider-container {
@@ -158,15 +153,9 @@
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease, object-fit 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
   display: block;
-  transform: scale(1);
-  cursor: zoom-in;
-}
-
-.about-image:hover {
-  transform: scale(0.85);
-  object-fit: contain;
+  cursor: pointer;
 }
 
 /* Image Navigation Arrows */
@@ -416,6 +405,78 @@
   overflow-wrap: break-word;
 }
 
+/* Image Lightbox Modal */
+.image-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 210, 63, 0.9);
+  color: #2C2C2C;
+  transform: rotate(90deg);
+  border-color: #FFD23F;
+}
+
 /* Animations */
 .fade-in,
 .slide-up {
@@ -600,7 +661,7 @@
 
   .image-box {
     aspect-ratio: 4/3;
-    max-height: 350px;
+    max-height: 980px;
     width: 100%;
     border-radius: 15px;
   }

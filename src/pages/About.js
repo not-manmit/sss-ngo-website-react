@@ -13,6 +13,7 @@ const approachImages = [approach1, approach2];
 const About = () => {
   const [storyImageIndex, setStoryImageIndex] = useState(0);
   const [approachImageIndex, setApproachImageIndex] = useState(0);
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   const nextStoryImage = () => {
     setStoryImageIndex((prevIndex) => (prevIndex + 1) % ourStoryImages.length);
@@ -32,6 +33,14 @@ const About = () => {
     setApproachImageIndex((prevIndex) => 
       prevIndex === 0 ? approachImages.length - 1 : prevIndex - 1
     );
+  };
+
+  const openLightbox = (image) => {
+    setLightboxImage(image);
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
   };
 
   useEffect(() => {
@@ -87,7 +96,12 @@ const About = () => {
             </div>
             <div className="content-image slide-up">
               <div className="image-box image-slider-container">
-                <img src={ourStoryImages[storyImageIndex]} alt="Our Story" className="about-image" />
+                <img 
+                  src={ourStoryImages[storyImageIndex]} 
+                  alt="Our Story" 
+                  className="about-image" 
+                  onClick={() => openLightbox(ourStoryImages[storyImageIndex])}
+                />
                 <button className="image-arrow image-arrow-left" onClick={prevStoryImage}>
                   ‹
                 </button>
@@ -115,7 +129,12 @@ const About = () => {
           <div className="content-grid">
             <div className="content-image slide-up">
               <div className="image-box approach-image image-slider-container">
-                <img src={approachImages[approachImageIndex]} alt="Our Approach" className="about-image" />
+                <img 
+                  src={approachImages[approachImageIndex]} 
+                  alt="Our Approach" 
+                  className="about-image" 
+                  onClick={() => openLightbox(approachImages[approachImageIndex])}
+                />
                 <button className="image-arrow image-arrow-left" onClick={prevApproachImage}>
                   ‹
                 </button>
@@ -273,6 +292,19 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div className="image-lightbox" onClick={closeLightbox}>
+          <button className="lightbox-close" onClick={closeLightbox}>×</button>
+          <img 
+            src={lightboxImage} 
+            alt="Full size" 
+            className="lightbox-image" 
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 };
