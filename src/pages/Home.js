@@ -18,6 +18,7 @@ const heroImages = [
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const nextImage = () => {
     console.log('Next button clicked, current index:', currentImageIndex);
@@ -106,21 +107,32 @@ const Home = () => {
             <Link to="/" className="hero-navbar-logo">
               Selfless <span className="logo-highlight">Serving Society</span>
             </Link>
-            <ul className="hero-nav-menu">
+            
+            {/* Hamburger Menu Icon for Mobile */}
+            <div 
+              className={`hero-menu-icon ${mobileMenuOpen ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            
+            <ul className={`hero-nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
               <li className="hero-nav-item">
-                <Link to="/" className="hero-nav-link active">Home</Link>
+                <Link to="/" className="hero-nav-link active" onClick={() => setMobileMenuOpen(false)}>Home</Link>
               </li>
               <li className="hero-nav-item">
-                <Link to="/about" className="hero-nav-link">About Us</Link>
+                <Link to="/about" className="hero-nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
               </li>
               <li className="hero-nav-item">
-                <Link to="/what-we-do" className="hero-nav-link">What We Do</Link>
+                <Link to="/what-we-do" className="hero-nav-link" onClick={() => setMobileMenuOpen(false)}>What We Do</Link>
               </li>
               <li className="hero-nav-item">
-                <Link to="/case-studies" className="hero-nav-link">Case Studies</Link>
+                <Link to="/case-studies" className="hero-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
               </li>
               <li className="hero-nav-item">
-                <Link to="/contact" className="hero-nav-link hero-nav-link-button">Contact Us</Link>
+                <Link to="/contact" className="hero-nav-link hero-nav-link-button" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
               </li>
             </ul>
           </div>
