@@ -26,9 +26,22 @@ const caseStudy2Photos = [
   require('../assets/Case Study 2/cs2 5.jpg'),
 ];
 
+// Import photos for case study 3
+const caseStudy3Photos = [
+  require('../assets/Case Study 3/cs3 1.jpg'),
+  require('../assets/Case Study 3/cs3 2.jpg'),
+  require('../assets/Case Study 3/cs3 3.jpg'),
+  require('../assets/Case Study 3/cs3 4.jpg'),
+  require('../assets/Case Study 3/cs3 5.jpg'),
+  require('../assets/Case Study 3/cs3 6.jpg'),
+  require('../assets/Case Study 3/cs3 7.jpg'),
+  require('../assets/Case Study 3/cs3 8.jpg'),
+];
+
 const CaseStudies = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [currentPhotoIndexCS2, setCurrentPhotoIndexCS2] = useState(0);
+  const [currentPhotoIndexCS3, setCurrentPhotoIndexCS3] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,6 +89,19 @@ const CaseStudies = () => {
     );
   };
 
+  // Navigation handlers for Case Study 3
+  const nextPhotoCS3 = () => {
+    setCurrentPhotoIndexCS3((prevIndex) => 
+      (prevIndex + 1) % caseStudy3Photos.length
+    );
+  };
+
+  const prevPhotoCS3 = () => {
+    setCurrentPhotoIndexCS3((prevIndex) => 
+      prevIndex === 0 ? caseStudy3Photos.length - 1 : prevIndex - 1
+    );
+  };
+
   const caseStudies = [
     {
       id: 1,
@@ -111,17 +137,18 @@ const CaseStudies = () => {
     },
     {
       id: 3,
-      title: "Healthcare Access Program",
-      location: "Tribal Areas, Jharkhand",
-      year: "2022-2023",
-      image: "🏥",
-      challenge: "No healthcare facilities within 50km for 10,000+ tribal population",
-      solution: "Mobile health clinics and telemedicine centers with trained healthcare workers",
+      title: "Empowering Rural Girls Through Tailoring Training",
+      location: "Rural Villages, Gujarat",
+      year: "2023",
+      image: "👧",
+      photos: caseStudy3Photos,
+      challenge: "Limited access to education and livelihood opportunities for young rural girls due to financial constraints and distant schools.",
+      solution: "Collaborated with a local tailoring center under the JOG initiative and sponsored two training batches for 20 girls, providing 3-month hands-on instruction in stitching and garment-making.",
       impact: [
-        "10,000+ patients treated",
-        "15 health workers trained",
-        "90% vaccination coverage",
-        "50% reduction in preventable diseases"
+        "20 girls trained and certified in tailoring",
+        "60% started earning through small stitching orders",
+        "Improved confidence and financial independence",
+        "Ongoing expansion to new rural communities"
       ]
     }
   ];
@@ -268,7 +295,7 @@ const CaseStudies = () => {
                             src={photo}
                             alt={`${study.title} - Photo ${photoIndex + 1}`}
                             className={`slider-image ${
-                              photoIndex === (study.id === 1 ? currentPhotoIndex : 0) 
+                              photoIndex === (study.id === 1 ? currentPhotoIndex : study.id === 3 ? currentPhotoIndexCS3 : 0) 
                               ? 'active' 
                               : ''
                             }`}
@@ -278,13 +305,13 @@ const CaseStudies = () => {
                         {/* Navigation Arrows */}
                         <button 
                           className="slider-arrow slider-arrow-left" 
-                          onClick={study.id === 1 ? prevPhoto : undefined}
+                          onClick={study.id === 1 ? prevPhoto : study.id === 3 ? prevPhotoCS3 : undefined}
                         >
                           ‹
                         </button>
                         <button 
                           className="slider-arrow slider-arrow-right" 
-                          onClick={study.id === 1 ? nextPhoto : undefined}
+                          onClick={study.id === 1 ? nextPhoto : study.id === 3 ? nextPhotoCS3 : undefined}
                         >
                           ›
                         </button>
@@ -294,12 +321,13 @@ const CaseStudies = () => {
                           <span
                             key={photoIndex}
                             className={`indicator ${
-                              photoIndex === (study.id === 1 ? currentPhotoIndex : 0)
+                              photoIndex === (study.id === 1 ? currentPhotoIndex : study.id === 3 ? currentPhotoIndexCS3 : 0)
                               ? 'active' 
                               : ''
                             }`}
                             onClick={() => {
                               if (study.id === 1) setCurrentPhotoIndex(photoIndex);
+                              if (study.id === 3) setCurrentPhotoIndexCS3(photoIndex);
                             }}
                           ></span>
                         ))}
