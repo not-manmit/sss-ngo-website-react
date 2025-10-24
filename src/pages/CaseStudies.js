@@ -194,7 +194,7 @@ const CaseStudies = () => {
                           <img
                             key={photoIndex}
                             src={photo}
-                            alt={`${study.title} - Photo ${photoIndex + 1}`}
+                            alt={`${study.title} - View ${photoIndex + 1}`}
                             className={`slider-image ${
                               photoIndex === currentPhotoIndexCS2 
                               ? 'active' 
@@ -293,7 +293,7 @@ const CaseStudies = () => {
                           <img
                             key={photoIndex}
                             src={photo}
-                            alt={`${study.title} - Photo ${photoIndex + 1}`}
+                            alt={`${study.title} - View ${photoIndex + 1}`}
                             className={`slider-image ${
                               photoIndex === (study.id === 1 ? currentPhotoIndex : study.id === 3 ? currentPhotoIndexCS3 : 0) 
                               ? 'active' 

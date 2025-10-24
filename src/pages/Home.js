@@ -21,19 +21,15 @@ const Home = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const nextImage = () => {
-    console.log('Next button clicked, current index:', currentImageIndex);
     setCurrentImageIndex((prevIndex) => {
       const newIndex = (prevIndex + 1) % heroImages.length;
-      console.log('Moving to index:', newIndex);
       return newIndex;
     });
   };
 
   const prevImage = () => {
-    console.log('Previous button clicked, current index:', currentImageIndex);
     setCurrentImageIndex((prevIndex) => {
       const newIndex = prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1;
-      console.log('Moving to index:', newIndex);
       return newIndex;
     });
   };
