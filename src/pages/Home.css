@@ -277,7 +277,6 @@
   padding: 0 2rem;
   max-width: 900px;
   margin-top: 0;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-title {
@@ -285,7 +284,6 @@
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
   padding-top: 0;
   color: white;
   word-wrap: break-word;
