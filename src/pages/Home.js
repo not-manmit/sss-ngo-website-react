@@ -147,32 +147,8 @@ const Home = () => {
           </div>
         </div>
         <div className="scroll-indicator">
-          <span>Scroll Down</span>
+          <span>Scroll Down </span>
           <div className="scroll-arrow"></div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="stats-section">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-card slide-up">
-              <div className="stat-number">15K+</div>
-              <div className="stat-label">Lives Impacted</div>
-            </div>
-            <div className="stat-card slide-up">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Active Projects</div>
-            </div>
-            <div className="stat-card slide-up">
-              <div className="stat-number">200+</div>
-              <div className="stat-label">Volunteers</div>
-            </div>
-            <div className="stat-card slide-up">
-              <div className="stat-number">30+</div>
-              <div className="stat-label">Communities Served</div>
-            </div>
-          </div>
         </div>
       </section>
 

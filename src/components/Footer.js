@@ -13,9 +13,9 @@ const Footer = () => {
           </p>
           <div className="social-links">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i className="social-icon">f</i></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter profile"><i className="social-icon">t</i></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile"><i className="social-icon">i</i></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page"><i className="social-icon">in</i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter profile"><i className="social-icon">X</i></a>
+            <a href="https://www.instagram.com/selfless_serving_society_?utm_source=qr&igsh=ajZlZDA1ZHQ4NHEz" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile"><i className="social-icon">i</i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page"><i className="social-icon">In</i></a>
           </div>
         </div>
 
@@ -24,8 +24,8 @@ const Footer = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/our-work">Our Work</Link></li>
-            <li><Link to="/partner">Partner With Us</Link></li>
+            <li><Link to="/what-we-do">Our Work</Link></li>
+            <li><Link to="/contact">Partner With Us</Link></li>
           </ul>
         </div>
 
