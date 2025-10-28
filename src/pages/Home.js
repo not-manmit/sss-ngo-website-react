@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import sssLogo from '../assets/images/SSS_LOGO_main-removebg-preview.png';
+import sssLogo from '../assets/images/Logo.svg';
 import './Home.css';
 
 // Import hero images (add your images to src/assets/home hero image/)
