@@ -9,6 +9,7 @@
   background: #2C2C2C;
   overflow: hidden;
   padding-top: 0;
+  
 }
 
 /* Background Image Slider */
@@ -19,8 +20,7 @@
   width: 100%;
   height: calc(100% - 80px);
   z-index: 1;
-  border-radius: 30px;
-  overflow: hidden;
+  overflow: hidden;margin-bottom: 0;
 }
 
 .hero-bg-image {

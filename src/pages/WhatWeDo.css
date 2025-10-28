@@ -1,5 +1,6 @@
 .what-we-do-page {
   min-height: 100vh;
+  padding-top: 80px;
 }
 
 /* Hero Section */
@@ -48,6 +49,7 @@
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 /* Section Styles */
