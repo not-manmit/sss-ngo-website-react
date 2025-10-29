@@ -79,7 +79,7 @@ const About = () => {
       <section className="section">
         <div className="container">
           <div className="content-grid">
-            <div className="content-text slide-up">
+            <div className="content-text">
               <h2 className="section-heading">Our Story</h2>
               <p>
                 We are a non-governmental, non-profit organisation dedicated to closing this gap. Through outreach programs, workshops, seminars, talks, and distribution of health-related products, we strive to empower people with knowledge, tools, and habits that help them live healthier, more dignified lives.
@@ -94,7 +94,7 @@ const About = () => {
                 Selfless Serving Society empowers communities by spreading health and hygiene awareness. Through workshops and outreach programs, it provides essential care and education to underserved areas, inspiring healthier and more dignified lives for all.
               </p>
             </div>
-            <div className="content-image slide-up">
+            <div className="content-image">
               <div className="image-box image-slider-container">
                 <img 
                   src={ourStoryImages[storyImageIndex]} 
@@ -127,7 +127,7 @@ const About = () => {
       <section className="section approach-section">
         <div className="container">
           <div className="content-grid">
-            <div className="content-image slide-up">
+            <div className="content-image">
               <div className="image-box approach-image image-slider-container">
                 <img 
                   src={approachImages[approachImageIndex]} 
@@ -152,7 +152,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="content-text slide-up">
+            <div className="content-text ">
               <h2 className="section-heading">Our Approach</h2>
               <p>
                 At Selfless Serving Society, our approach focuses on empowering women and girls through education, awareness, and community support. We conduct workshops and sessions for adolescent girls on menstrual health, puberty, body changes, self-care, hygiene, and breaking taboos. By creating safe spaces in schools and communities, we encourage open conversations, provide guidance, and ensure access to sanitary supplies without shame.
@@ -172,14 +172,14 @@ const About = () => {
       <section className="section vision-mission-section">
         <div className="container">
           <div className="vm-grid">
-            <div className="vm-card slide-up">
+            <div className="vm-card ">
               <div className="vm-icon">🎯</div>
               <h2>Our Vision</h2>
               <p>
                 To build a compassionate and informed society where every individual, regardless of age or gender, is empowered and treated with dignity and respect.
               </p>
             </div>
-            <div className="vm-card slide-up">
+            <div className="vm-card ">
               <div className="vm-icon">🚀</div>
               <h2>Our Mission</h2>
               <p>

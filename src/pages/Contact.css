@@ -345,9 +345,7 @@
   transition: all 0.8s ease;
 }
 
-.slide-up {
-  transform: translateY(40px);
-}
+
 
 .fade-in.animate,
 .slide-up.animate {

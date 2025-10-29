@@ -499,9 +499,7 @@
   transform: translateY(20px);
 }
 
-.slide-up {
-  transform: translateY(40px);
-}
+
 
 .fade-in.animate,
 .slide-up.animate {

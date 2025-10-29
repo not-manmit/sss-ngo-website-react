@@ -7,13 +7,13 @@ import './Home.css';
 // Uncomment these lines and add your actual image files
 import heroImage1 from '../assets/home hero image/image1.jpg';
 import heroImage2 from '../assets/home hero image/image2.jpg';
-import heroImage3 from '../assets/home hero image/image3.jpg';
+// import heroImage3 from '../assets/home hero image/image3.jpg';
 
 // Placeholder images array - replace with your actual images
 const heroImages = [
   heroImage1,
-  heroImage2,
-  heroImage3,
+  // heroImage2,
+  // heroImage3,
 ];
 
 const Home = () => {
@@ -161,7 +161,7 @@ const Home = () => {
                 <img src={sssLogo} alt="SSS Logo" className="image-icon" />
               </div>
             </div>
-            <div className="section-content slide-up">
+            <div className="section-content">
               <h2 className="section-title">Who We Are</h2>
               <p className="section-text">
                 Selfless Serving Society was founded by a group of compassionate individuals united by a simple yet profound belief — that awareness of basic health and hygiene has the power to transform lives and uplift entire communities. In many underserved regions, limited access to essential health supplies, minimal exposure to hygienic practices, and the absence of regular outreach efforts allow preventable illnesses to silently persist — often affecting women, children, and the elderly the most.
