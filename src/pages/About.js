@@ -240,7 +240,7 @@ const About = () => {
             Dedicated leaders guiding our mission with expertise and compassion
           </p>
           <div className="team-grid">
-            <div className="team-card slide-up">
+            <div className="team-card">
               <div className="team-photo">👤</div>
               <h3>Nasreen Rishi Madaan</h3>
               <p className="team-role">Trustee</p>

@@ -38,10 +38,33 @@ const caseStudy3Photos = [
   require('../assets/Case Study 3/cs3 8.jpg'),
 ];
 
+// Import photos for case study 4 (using placeholder images for now)
+// Replace these with actual Case Study 4 photos when available
+const caseStudy4Photos = [
+  require('../assets/Case Study 4/cs4 1.jpg'),
+  require('../assets/Case Study 4/cs4 2.jpg'),
+  require('../assets/Case Study 4/cs4 3.jpg'),
+  require('../assets/Case Study 4/cs4 5.jpg'),
+  require('../assets/Case Study 4/cs4 6.jpg'),
+  require('../assets/Case Study 4/cs4 7.jpg'),
+  require('../assets/Case Study 4/cs4 8.jpg'),
+  require('../assets/Case Study 4/cs4 9.jpg'),
+  require('../assets/Case Study 4/cs4 10.jpg'),
+  require('../assets/Case Study 4/cs4 11.jpg'),
+  require('../assets/Case Study 4/cs4 12.jpg'),
+  require('../assets/Case Study 4/cs4 13.jpg'),
+  require('../assets/Case Study 4/cs4 14.jpg'),
+  require('../assets/Case Study 4/cs4 15.jpg'),
+  require('../assets/Case Study 4/cs4 16.jpg'),
+  require('../assets/Case Study 4/cs4 17.jpg'),
+  require('../assets/Case Study 4/cs4 18.jpg'),
+];
+
 const CaseStudies = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [currentPhotoIndexCS2, setCurrentPhotoIndexCS2] = useState(0);
   const [currentPhotoIndexCS3, setCurrentPhotoIndexCS3] = useState(0);
+  const [currentPhotoIndexCS4, setCurrentPhotoIndexCS4] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -102,6 +125,19 @@ const CaseStudies = () => {
     );
   };
 
+  // Navigation handlers for Case Study 4
+  const nextPhotoCS4 = () => {
+    setCurrentPhotoIndexCS4((prevIndex) => 
+      (prevIndex + 1) % caseStudy4Photos.length
+    );
+  };
+
+  const prevPhotoCS4 = () => {
+    setCurrentPhotoIndexCS4((prevIndex) => 
+      prevIndex === 0 ? caseStudy4Photos.length - 1 : prevIndex - 1
+    );
+  };
+
   const caseStudies = [
     {
       id: 1,
@@ -149,6 +185,25 @@ const CaseStudies = () => {
         "60% started earning through small stitching orders",
         "Improved confidence and financial independence",
         "Ongoing expansion to new rural communities"
+      ]
+    },
+    {
+      id: 4,
+      title: "Flood Relief at Rasikpur Village",
+      location: "Rasikpur Village, Gujarat",
+      year: "During Navratri 2023",
+      image: "🩺",
+      photos: caseStudy4Photos,
+      challenge: "Sudden flooding from the Sabarmati River left homes submerged, crops damaged, and families without food, clean water, or essential supplies.",
+      solution: "Launched the “Anna Daan” Flood Relief Drive, mobilizing volunteers and residents to collect and distribute food grains and necessities to flood-affected families while ensuring support reached unreached households.",
+      impact: [
+        "650 kg of food grains collected through community donations500+ hygiene kits distributed",
+        "350 kg distributed to flood-affected families in Rasikpur",
+        "Improved menstrual health knowledge among beneficiaries",
+        "Over 120+ families received immediate relief support",
+        "Strengthened community participation through the Anna Daan initiative",
+        "Promoted empathy and unity during crisis response",
+        "Inspired ongoing partnerships for future disaster relief efforts"
       ]
     }
   ];
@@ -295,7 +350,11 @@ const CaseStudies = () => {
                             src={photo}
                             alt={`${study.title} - View ${photoIndex + 1}`}
                             className={`slider-image ${
-                              photoIndex === (study.id === 1 ? currentPhotoIndex : study.id === 3 ? currentPhotoIndexCS3 : 0) 
+                              photoIndex === (
+                                study.id === 1 ? currentPhotoIndex : 
+                                study.id === 3 ? currentPhotoIndexCS3 : 
+                                study.id === 4 ? currentPhotoIndexCS4 : 0
+                              ) 
                               ? 'active' 
                               : ''
                             }`}
@@ -305,13 +364,21 @@ const CaseStudies = () => {
                         {/* Navigation Arrows */}
                         <button 
                           className="slider-arrow slider-arrow-left" 
-                          onClick={study.id === 1 ? prevPhoto : study.id === 3 ? prevPhotoCS3 : undefined}
+                          onClick={
+                            study.id === 1 ? prevPhoto : 
+                            study.id === 3 ? prevPhotoCS3 : 
+                            study.id === 4 ? prevPhotoCS4 : undefined
+                          }
                         >
                           ‹
                         </button>
                         <button 
                           className="slider-arrow slider-arrow-right" 
-                          onClick={study.id === 1 ? nextPhoto : study.id === 3 ? nextPhotoCS3 : undefined}
+                          onClick={
+                            study.id === 1 ? nextPhoto : 
+                            study.id === 3 ? nextPhotoCS3 : 
+                            study.id === 4 ? nextPhotoCS4 : undefined
+                          }
                         >
                           ›
                         </button>
@@ -321,13 +388,18 @@ const CaseStudies = () => {
                           <span
                             key={photoIndex}
                             className={`indicator ${
-                              photoIndex === (study.id === 1 ? currentPhotoIndex : study.id === 3 ? currentPhotoIndexCS3 : 0)
+                              photoIndex === (
+                                study.id === 1 ? currentPhotoIndex : 
+                                study.id === 3 ? currentPhotoIndexCS3 : 
+                                study.id === 4 ? currentPhotoIndexCS4 : 0
+                              )
                               ? 'active' 
                               : ''
                             }`}
                             onClick={() => {
                               if (study.id === 1) setCurrentPhotoIndex(photoIndex);
                               if (study.id === 3) setCurrentPhotoIndexCS3(photoIndex);
+                              if (study.id === 4) setCurrentPhotoIndexCS4(photoIndex);
                             }}
                           ></span>
                         ))}

@@ -6,7 +6,7 @@ import './Home.css';
 // Import hero images (add your images to src/assets/home hero image/)
 // Uncomment these lines and add your actual image files
 import heroImage1 from '../assets/home hero image/image1.jpg';
-import heroImage2 from '../assets/home hero image/image2.jpg';
+// import heroImage2 from '../assets/home hero image/image2.jpg';
 // import heroImage3 from '../assets/home hero image/image3.jpg';
 
 // Placeholder images array - replace with your actual images
