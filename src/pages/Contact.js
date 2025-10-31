@@ -74,22 +74,22 @@ const Contact = () => {
       <section className="section">
         <div className="container">
           <div className="contact-info-grid">
-            <div className="info-card slide-up">
+            <div className="info-card ">
               <div className="info-icon">📍</div>
               <h3>Visit Us</h3>
               <p>123 Hope Street<br />City, State 12345<br />Country</p>
             </div>
-            <div className="info-card slide-up">
+            <div className="info-card ">
               <div className="info-icon">📧</div>
               <h3>Email Us</h3>
               <p>info@selflessserving.org<br />support@selflessserving.org</p>
             </div>
-            <div className="info-card slide-up">
+            <div className="info-card ">
               <div className="info-icon">📞</div>
               <h3>Call Us</h3>
               <p>+1 (555) 123-4567<br />Mon-Fri: 9AM - 6PM</p>
             </div>
-            <div className="info-card slide-up">
+            <div className="info-card ">
               <div className="info-icon">🌐</div>
               <h3>Follow Us</h3>
               <p>@selflessserving on social media<br />Stay connected with us</p>
@@ -102,7 +102,7 @@ const Contact = () => {
       <section className="section form-section">
         <div className="container">
           <div className="form-container">
-            <div className="form-content slide-up">
+            <div className="form-content">
               <h2 className="section-heading">Send Us a Message</h2>
               <p className="section-description">
                 Have a question or want to get involved? Fill out the form below and we'll get back to you as soon as possible.
@@ -221,7 +221,7 @@ const Contact = () => {
         <div className="container">
           <h2 className="section-heading centered">Frequently Asked Questions</h2>
           <div className="faq-grid">
-            <div className="faq-item slide-up">
+            <div className="faq-item ">
               <h3>How can I volunteer?</h3>
               <p>
                 You can apply through our contact form by selecting "Volunteer Opportunities" 
@@ -229,21 +229,21 @@ const Contact = () => {
                 our current needs.
               </p>
             </div>
-            <div className="faq-item slide-up">
+            <div className="faq-item ">
               <h3>Are donations tax-deductible?</h3>
               <p>
                 Yes, we are a registered nonprofit organization, and all donations are 
                 tax-deductible. You'll receive a receipt for your records.
               </p>
             </div>
-            <div className="faq-item slide-up">
+            <div className="faq-item ">
               <h3>How do you use donations?</h3>
               <p>
                 We allocate funds directly to our programs with minimal overhead. We publish 
                 annual reports detailing our financial transparency and impact metrics.
               </p>
             </div>
-            <div className="faq-item slide-up">
+            <div className="faq-item ">
               <h3>Can I visit your projects?</h3>
               <p>
                 Absolutely! We welcome visits to our project sites. Contact us to schedule 

@@ -15,7 +15,7 @@ const Footer = () => {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i className="social-icon">f</i></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter profile"><i className="social-icon">X</i></a>
             <a href="https://www.instagram.com/selfless_serving_society_?utm_source=qr&igsh=ajZlZDA1ZHQ4NHEz" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile"><i className="social-icon">i</i></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page"><i className="social-icon">In</i></a>
+            <a href="https://www.linkedin.com/in/konica-lishoy-113ab2390" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page"><i className="social-icon">In</i></a>
           </div>
         </div>
 
