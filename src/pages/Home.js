@@ -137,10 +137,7 @@ const Home = () => {
         <div className="hero-content">
           <h1 className="hero-title fade-in">
             Helping People, Changing Lives            
-          </h1>
-          <p className="hero-subtitle">
-            Empowering Communities Through Health, Hygiene, Education, and Compassionate Change for a Dignified Future
-          </p>
+          </h1>          
           <div className="hero-buttons">
             <Link to="/Contact" className="btn btn-primary">Get Involved</Link>
             <Link to="/What-We-Do" className="btn btn-secondary">Learn More</Link>
@@ -191,21 +188,25 @@ const Home = () => {
               <div className="work-icon">📚</div>
               <h3>Education</h3>
               <p>Empowered 20 rural girls in Gujarat through tailoring training, helping them gain confidence, skills, and financial independence.</p>
+              <Link to="/case-studies#case-study-3" className="work-card-link">Read Case Study →</Link>
             </div>
             <div className="work-card slide-up">
               <div className="work-icon">🏥</div>
               <h3>Healthcare</h3>
               <p>Promoted menstrual hygiene and wellness by distributing essential hygiene kits to adolescent girls in marginalized communities.</p>
+              <Link to="/case-studies#case-study-4" className="work-card-link">Read Case Study →</Link>
             </div>
             <div className="work-card slide-up">
               <div className="work-icon">🌱</div>
               <h3>Environment</h3>
               <p>Collected 31 kg of clothes under the KAPAAD Project, promoting recycling, zero-waste practices, and sustainable living.</p>
+              <Link to="/case-studies#case-study-2" className="work-card-link">Read Case Study →</Link>
             </div>
             <div className="work-card slide-up">
               <div className="work-icon">💼</div>
               <h3>Livelihood</h3>
               <p>Created livelihood opportunities for 50+ tribal women and differently-abled artisans through handcrafted product sales and exhibitions.</p>
+              <Link to="/case-studies#case-study-1" className="work-card-link">Read Case Study →</Link>
             </div>
           </div>
 

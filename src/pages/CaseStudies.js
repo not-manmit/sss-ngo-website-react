@@ -81,6 +81,16 @@ const CaseStudies = () => {
     const elements = document.querySelectorAll('.fade-in, .slide-up');
     elements.forEach((el) => observer.observe(el));
 
+    // Handle anchor link scrolling
+    if (window.location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
+
     return () => {
       observer.disconnect();
     };
@@ -237,7 +247,11 @@ const CaseStudies = () => {
       <section className="section case-studies-section">
         <div className="container">
           {caseStudies.map((study, index) => (
-            <div key={study.id} className={`case-study-card slide-up ${index % 2 === 0 ? 'left' : 'right'}`}>
+            <div 
+              key={study.id} 
+              id={`case-study-${study.id}`}
+              className={`case-study-card slide-up ${index % 2 === 0 ? 'left' : 'right'}`}
+            >
               {study.id === 2 ? (
                 // Special layout for card 2
                 <div className="case-study-wrapper">

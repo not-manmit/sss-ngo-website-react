@@ -267,6 +267,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  /* Dont change this */
   /* background: rgba(230, 224, 224, 0.252); */
   z-index: 2;
 }
@@ -501,6 +502,21 @@
 .work-card p {
   color: #7f8c8d;
   line-height: 1.6;
+}
+
+.work-card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #E8B10D;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.work-card-link:hover {
+  color: #FFD23F;
+  transform: translateX(5px);
 }
 
 /* CTA Section */
