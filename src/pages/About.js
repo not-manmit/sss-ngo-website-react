@@ -250,18 +250,18 @@ const About = () => {
             </div>
             <div className="team-card ">
               <div className="team-photo">👤</div>
-              <h3>Mamata Hulke John</h3>
-              <p className="team-role">Trustee</p>
-              <p className="team-bio">
-                Mamata Hulke John holds degrees in Commerce (B.Com), Physical Education (B.P.Ed), and Sports Management. A teacher turned entrepreneur with a growing interest in finance, she brings creativity, energy, and a people-focused approach to her role as Trustee. Her educational background and management experience enable her to contribute effectively to the organisation’s programs and social initiatives
-              </p>
-            </div>
-            <div className="team-card ">
-              <div className="team-photo">👤</div>
               <h3>Sunita Fernandes</h3>
               <p className="team-role">Trustee</p>
               <p className="team-bio">
                 Sunita Fernandes holds a Post Graduate Diploma in Human Resources and brings nearly two decades of global experience across East Africa and India. An accomplished HR professional, she has led initiatives in people development, organisational transformation, and culture alignment. As Trustee, Sunita applies her expertise to foster a positive, people-centered approach in the Society’s operations and outreach programs.
+              </p>
+            </div>
+            <div className="team-card ">
+              <div className="team-photo">👤</div>
+              <h3>Mamata Hulke John</h3>
+              <p className="team-role">Trustee</p>
+              <p className="team-bio">
+                Mamata Hulke John holds degrees in Commerce (B.Com), Physical Education (B.P.Ed), and Sports Management. A teacher turned entrepreneur with a growing interest in finance, she brings creativity, energy, and a people-focused approach to her role as Trustee. Her educational background and management experience enable her to contribute effectively to the organisation’s programs and social initiatives
               </p>
             </div>
             <div className="team-card ">
