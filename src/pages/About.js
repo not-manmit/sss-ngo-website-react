@@ -198,32 +198,32 @@ const About = () => {
             The principles that guide everything we do
           </p>
           <div className="values-grid">
-            <div className="value-card slide-up">
+            <div className="value-card">
               <div className="value-icon">🌸</div>
               <h3>Empower</h3>
               <p>We believe that no women, adolescent girl should miss work or school, feel ashamed, or be deprived of her dignity because of menstruation or hygiene barriers.</p>
             </div>
-            <div className="value-card slide-up">
+            <div className="value-card">
               <div className="value-icon">🤝</div>
               <h3>Integrity</h3>
               <p>We operate with transparency, accountability, and ethical practices in all we do.</p>
             </div>
-            <div className="value-card slide-up">
+            <div className="value-card">
               <div className="value-icon">🌟</div>
               <h3>Excellence</h3>
               <p>We strive for the highest standards in program delivery and impact measurement.</p>
             </div>
-            <div className="value-card slide-up">
+            <div className="value-card">
               <div className="value-icon">🔗</div>
               <h3>Collaboration</h3>
               <p>We believe in the power of partnerships and collective action for greater impact.</p>
             </div>
-            <div className="value-card slide-up">
+            <div className="value-card ">
               <div className="value-icon">♻️</div>
               <h3>Sustainability</h3>
               <p>We create solutions that endure, building long-term capacity within communities.</p>
             </div>
-            <div className="value-card slide-up">
+            <div className="value-card">
               <div className="value-icon">✨</div>
               <h3>Innovation</h3>
               <p>We embrace creative approaches and continuously adapt to serve communities better.</p>
@@ -303,7 +303,7 @@ const About = () => {
       {/* Impact Statement */}
       <section className="impact-statement">
         <div className="container">
-          <div className="statement-content slide-up">
+          <div className="statement-content">
             <h2>Together, We Create Change</h2>
             <p>
               Every achievement, every life touched, and every community transformed is a testament 
